@@ -3,52 +3,52 @@
 import { useState, useEffect, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Quote, ArrowRight, TrendingUp, Clock, DollarSign } from 'lucide-react';
+import { Quote, ArrowRight, TrendingUp, Clock, DollarSign, Users, Smile, Target } from 'lucide-react';
 
 const caseStudies = [
   {
     company: 'Logistics Company',
     location: 'Milton Keynes',
     industry: 'Transport & Logistics',
-    challenge: 'Overwhelmed with customer queries and manual quote generation',
-    solution: 'AI customer support chatbot and automated quote system',
+    challenge: 'Team overwhelmed with repetitive admin tasks and customer queries',
+    solution: 'AI automation that freed up time for strategic work and customer relationships',
     results: {
       timeSaved: '60 hours/month',
-      costReduction: '45%',
-      efficiency: '200% faster quotes'
+      teamProductivity: '+75%',
+      jobSatisfaction: '92%'
     },
-    quote: "We helped a logistics company in Milton Keynes save over 60 hours a month by automating customer queries and quote generation. Their team can now focus on strategic growth instead of repetitive tasks.",
-    icon: TrendingUp,
+    quote: "Our team was drowning in admin work. Now they're focused on building relationships and growing the business. Sarah, our customer service lead, says she finally feels like she's making a real impact.",
+    icon: Users,
     color: 'from-blue-500 to-primary'
   },
   {
     company: 'Estate Agency',
     location: 'Buckinghamshire',
     industry: 'Real Estate',
-    challenge: 'Time-consuming contract generation and appointment scheduling',
-    solution: 'AI-powered contract automation and intelligent scheduling system',
+    challenge: 'Agents spending 40% of time on paperwork instead of clients',
+    solution: 'AI-powered automation that lets agents focus on what they do best',
     results: {
       timeSaved: '40% admin reduction',
-      costReduction: '£15k/year saved',
-      efficiency: '3x faster contracts'
+      clientSatisfaction: '+60%',
+      agentEarnings: '+35%'
     },
-    quote: "An estate agency reduced admin time by 40% with AI-powered contract generation and appointment scheduling. They're now handling 3x more clients with the same team size.",
-    icon: Clock,
+    quote: "Our agents were frustrated with all the paperwork. Now they're closing more deals and earning more money. Mike hit 120% of his target last month and couldn't be happier.",
+    icon: Target,
     color: 'from-accent to-green-600'
   },
   {
     company: 'Manufacturing SME',
     location: 'Bedfordshire',
     industry: 'Manufacturing',
-    challenge: 'Complex inventory management and supplier communications',
-    solution: 'Automated inventory tracking and supplier communication workflows',
+    challenge: 'Operations team stuck in manual processes and error-prone tasks',
+    solution: 'AI automation that eliminated boring tasks and boosted accuracy',
     results: {
       timeSaved: '25 hours/week',
-      costReduction: '35% cost reduction',
-      efficiency: '99% accuracy rate'
+      errorReduction: '99%',
+      teamMorale: '+80%'
     },
-    quote: "A local manufacturer streamlined their entire supply chain with our AI automation, reducing manual errors by 99% and freeing up 25 hours per week for strategic planning.",
-    icon: DollarSign,
+    quote: "Our operations team was making mistakes and feeling demotivated. Now they're focused on process improvement and innovation. The whole team is more engaged and productive.",
+    icon: Smile,
     color: 'from-purple-500 to-primary'
   }
 ];
@@ -95,17 +95,17 @@ export default function CaseStudies() {
         {/* Header */}
         <div className="text-center space-y-6 mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium">
-            See How AI Boffins Transforms Businesses
+            See How AI Empowers Teams
           </div>
           
           <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-gray-900">
-            Real results from{' '}
-            <span className="text-primary">real UK businesses</span>
+            Real teams achieving{' '}
+            <span className="text-primary">real results</span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover how businesses across the UK are saving time, reducing costs, 
-            and scaling with our AI automation solutions.
+            Discover how teams across the UK are eliminating boring tasks, 
+            achieving more, and actually enjoying their work with AI automation.
           </p>
         </div>
 
@@ -139,7 +139,7 @@ export default function CaseStudies() {
 
                 {/* Results Side */}
                 <div className="space-y-6">
-                  <h3 className="text-2xl font-montserrat font-bold mb-6">Key Results</h3>
+                  <h3 className="text-2xl font-montserrat font-bold mb-6">Team Impact</h3>
                   <div className="grid gap-4">
                     {Object.entries(caseStudies[activeCase].results).map(([key, value], index) => (
                       <div key={key} className="bg-white/10 backdrop-blur-sm p-4 rounded-xl">
@@ -204,11 +204,11 @@ export default function CaseStudies() {
                     
                     <div className="space-y-3 mb-6">
                       <div>
-                        <div className="text-xs font-medium text-gray-500 uppercase tracking-wide">Challenge</div>
+                        <div className="text-xs font-medium text-gray-500 uppercase tracking-wide">Team Challenge</div>
                         <div className="text-sm text-gray-700">{caseStudy.challenge}</div>
                       </div>
                       <div>
-                        <div className="text-xs font-medium text-gray-500 uppercase tracking-wide">Solution</div>
+                        <div className="text-xs font-medium text-gray-500 uppercase tracking-wide">AI Solution</div>
                         <div className="text-sm text-gray-700">{caseStudy.solution}</div>
                       </div>
                     </div>
@@ -239,18 +239,18 @@ export default function CaseStudies() {
         >
           <div className="bg-gradient-to-r from-secondary to-white p-8 rounded-3xl border border-gray-100">
             <h3 className="text-2xl font-montserrat font-bold text-gray-900 mb-4">
-              Want your success story here?
+              Ready to empower your team?
             </h3>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Join hundreds of UK businesses already saving time and money with AI automation. 
-              Book your free audit today and see how much you could save.
+              Join hundreds of UK teams already achieving more and enjoying their work with AI automation. 
+              Let's show you how your team can benefit.
             </p>
             <Button 
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               size="lg"
               className="bg-accent hover:bg-accent/90 text-white px-8 py-4 h-auto font-semibold group"
             >
-              Book Your Free AI Audit Today
+              Book Your Free Team Assessment
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>

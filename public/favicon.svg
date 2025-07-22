@@ -1,0 +1,54 @@
+<svg width="300" height="150" viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" style="cursor: pointer;">
+  <!-- White circular background -->
+  <circle cx="150" cy="75" r="90" fill="#ffffff" />
+  
+  <!-- Letters AIB styled individually -->
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
+        font-family="'Poppins', sans-serif" font-size="80" font-weight="900" letter-spacing="-15">
+    <tspan fill="rgb(30, 75, 124)">A</tspan>
+    <tspan fill="#FFAA00">I</tspan>
+    <tspan fill="rgb(45, 190, 127)">B</tspan>
+  </text>
+  
+  <!-- Spiral Overlay -->
+  <circle id="spiral" cx="150" cy="75" r="0" fill="none" stroke="#00F0FF" stroke-width="10" opacity="0" />
+  
+  <style>
+    svg:hover #spiral {
+      animation: spiral-out 2s ease forwards;
+    }
+    @keyframes spiral-out {
+      0% {
+        r: 0;
+        opacity: 0.7;
+        stroke: rgb(30, 75, 124);
+      }
+      33% {
+        r: 50;
+        opacity: 0.5;
+        stroke: rgb(45, 190, 127);
+      }
+      66% {
+        r: 100;
+        opacity: 0.3;
+        stroke: #FFAA00;
+      }
+      100% {
+        r: 150;
+        opacity: 0;
+        stroke: #FFAA00;
+      }
+    }
+      50% {
+        r: 75;
+        opacity: 0.4;
+        stroke: rgb(45, 190, 127);
+      }
+      100% {
+        r: 150;
+        opacity: 0;
+        stroke: #FFAA00;
+      }
+    }
+  </style>
+</svg>

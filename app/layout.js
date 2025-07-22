@@ -14,12 +14,12 @@ const openSans = Open_Sans({
 });
 
 export const metadata = {
-  title: 'AI Boffins - AI Automation for UK Businesses',
-  description: 'Save time, cut costs, and boost productivity with AI automation. UK-based, GDPR-compliant, and expertly delivered by AI Boffins.',
-  keywords: 'AI automation, UK business automation, customer service AI, workflow automation, document automation, lead generation AI',
+  title: 'AI Boffins - Empowering UK Teams with AI',
+  description: 'Transform boring tasks into opportunities for growth. Help your team hit higher targets, earn more, and enjoy their work with AI automation.',
+  keywords: 'team empowerment, AI automation, UK workers, productivity boost, job satisfaction, workflow automation',
   openGraph: {
-    title: 'AI Boffins - AI Automation for UK Businesses',
-    description: 'Save time, cut costs, and boost productivity with AI automation. UK-based, GDPR-compliant, and expertly delivered.',
+    title: 'AI Boffins - Empowering UK Teams with AI',
+    description: 'Transform boring tasks into opportunities for growth. Help your team hit higher targets, earn more, and enjoy their work.',
     type: 'website',
   },
 };
@@ -28,6 +28,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${montserrat.variable} ${openSans.variable}`}>
       <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>

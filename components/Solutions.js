@@ -2,54 +2,54 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { MessageSquare, FileText, Workflow, Target, ArrowRight } from 'lucide-react';
+import { MessageSquare, FileText, Workflow, Target, ArrowRight, Users, TrendingUp, Clock, Zap } from 'lucide-react';
 
 const solutions = [
   {
-    icon: MessageSquare,
-    title: 'AI Customer Support',
-    description: 'AI chatbots, automated email responses, and instant support tools. Handle queries 24/7.',
+    icon: Clock,
+    title: 'Eliminate Boring Tasks',
+    description: 'Automate repetitive admin work so your team can focus on what they love and what drives results.',
     features: [
-      'Intelligent chatbot responses',
-      '24/7 customer support',
-      'Multi-channel integration',
-      'Sentiment analysis'
+      'Auto-process invoices & expenses',
+      'Smart email sorting & responses',
+      'Automated data entry & reporting',
+      'Calendar management & scheduling'
     ],
     color: 'from-blue-500 to-primary'
   },
   {
-    icon: FileText,
-    title: 'Document Automation',
-    description: 'Auto-generate contracts, invoices, reports, and summaries—error-free, lightning fast.',
+    icon: TrendingUp,
+    title: 'Boost Performance',
+    description: 'Help your team hit higher targets and earn more with AI-powered insights and automation.',
     features: [
-      'Contract generation',
-      'Invoice automation',
-      'Report creation',
-      'Document summarization'
+      'Performance tracking & insights',
+      'Goal optimization suggestions',
+      'Automated follow-ups & reminders',
+      'Real-time productivity coaching'
     ],
     color: 'from-accent to-green-600'
   },
   {
-    icon: Workflow,
-    title: 'Workflow Automation',
-    description: 'Connect systems like CRM, email, SMS, and calendars with AI-powered logic.',
+    icon: Users,
+    title: 'Enhance Team Collaboration',
+    description: 'Streamline communication and workflow so your team works together more effectively.',
     features: [
-      'System integrations',
-      'Process automation',
-      'Smart scheduling',
-      'Task management'
+      'Smart task assignment',
+      'Automated progress updates',
+      'Team performance insights',
+      'Seamless system integration'
     ],
     color: 'from-purple-500 to-primary'
   },
   {
-    icon: Target,
-    title: 'Lead Generation AI',
-    description: 'AI-powered prospecting, outreach, follow-ups, and appointment scheduling.',
+    icon: Zap,
+    title: 'Accelerate Growth',
+    description: 'Give your team the tools they need to scale their impact and drive business growth.',
     features: [
-      'Lead qualification',
-      'Automated outreach',
-      'Follow-up sequences',
-      'Appointment booking'
+      'Lead qualification & nurturing',
+      'Customer relationship automation',
+      'Sales pipeline optimization',
+      'Revenue growth tracking'
     ],
     color: 'from-orange-500 to-accent'
   }
@@ -87,18 +87,17 @@ export default function Solutions() {
         {/* Header */}
         <div className="text-center space-y-6 mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">
-            AI Solutions Built for Your Business
+            AI Solutions That Empower Your Team
           </div>
           
           <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-gray-900">
-            Whether you're drowning in admin or looking to{' '}
-            <span className="text-accent">supercharge growth</span>,{' '}
-            AI Boffins delivers automation that works.
+            Stop doing the boring stuff.{' '}
+            <span className="text-accent">Start achieving more.</span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our AI solutions are designed specifically for UK businesses, ensuring compliance, 
-            reliability, and measurable results from day one.
+            Our AI solutions help your team eliminate repetitive tasks, focus on meaningful work, 
+            and achieve better results. Because when your team wins, your business wins.
           </p>
         </div>
 
@@ -159,16 +158,16 @@ export default function Solutions() {
         <div className="mt-16 text-center">
           <div className="bg-gradient-to-r from-primary to-accent p-8 rounded-3xl text-white">
             <h3 className="text-2xl font-montserrat font-bold mb-4">
-              Ready to see which solution fits your business?
+              Ready to transform how your team works?
             </h3>
             <p className="text-lg opacity-90 mb-6">
-              Book a free consultation and we'll show you exactly how AI can transform your operations.
+              Let's show you how AI can help your team achieve more while enjoying their work.
             </p>
             <button 
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-white text-primary px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105"
             >
-              Book Free Consultation
+              Book Free Team Assessment
             </button>
           </div>
         </div>

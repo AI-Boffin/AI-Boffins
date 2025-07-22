@@ -1,38 +1,38 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { Shield, Award, Users, MapPin, Check, Star } from 'lucide-react';
+import { Shield, Award, Users, MapPin, Check, Star, Heart, Zap } from 'lucide-react';
 
 const trustElements = [
   {
-    icon: Shield,
-    title: 'GDPR-Compliant Solutions',
-    description: 'All our AI systems are built with privacy by design, ensuring full GDPR compliance.',
+    icon: Heart,
+    title: 'Team-First Approach',
+    description: 'We design AI solutions that enhance your team\'s work, never replace it. Your people come first.',
     color: 'from-green-500 to-accent'
   },
   {
     icon: MapPin,
-    title: 'UK-Based Support',
-    description: 'Real people, real expertise. Our entire team is based right here in the UK.',
+    title: 'UK-Based Team Support',
+    description: 'Real people supporting real teams. Our entire team is based right here in the UK.',
     color: 'from-blue-500 to-primary'
   },
   {
     icon: Award,
     title: 'Backed by IT Boffins Reputation',
-    description: 'Part of the trusted IT Boffins family, serving UK businesses for over a decade.',
+    description: 'Part of the trusted IT Boffins family, serving UK teams for over a decade.',
     color: 'from-purple-500 to-primary'
   },
   {
-    icon: Users,
-    title: 'Secure AI – Your Data Stays Yours',
-    description: 'We never store or share your data. Everything stays within your secure environment.',
+    icon: Shield,
+    title: 'Secure & Private',
+    description: 'Your team\'s data stays yours. We never store or share sensitive information.',
     color: 'from-orange-500 to-accent'
   }
 ];
 
 const credentials = [
-  'ISO 27001 Compliant',
-  'GDPR Certified',
+  'Team Training Certified',
+  'GDPR Compliant',
   'Cyber Essentials Plus',
   'UK Government Framework',
   'SME Business Approved',
@@ -71,17 +71,17 @@ export default function Trust() {
         {/* Header */}
         <div className="text-center space-y-6 mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">
-            Trust & Compliance
+            Trust & Team Empowerment
           </div>
           
           <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-gray-900">
-            Your business is safe with{' '}
+            Your team is safe with{' '}
             <span className="text-accent">AI Boffins</span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             We understand that trust is earned. That's why we've built our reputation on 
-            security, compliance, and exceptional service delivery.
+            empowering teams, not replacing them, with secure and compliant AI solutions.
           </p>
         </div>
 
@@ -132,10 +132,10 @@ export default function Trust() {
           <div className="bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
             <div className="text-center mb-8">
               <h3 className="text-2xl font-montserrat font-bold text-gray-900 mb-4">
-                Certified & Accredited
+                Certified & Team-Focused
               </h3>
               <p className="text-gray-600">
-                We maintain the highest standards of security, compliance, and service quality.
+                We maintain the highest standards of security, compliance, and team empowerment.
               </p>
             </div>
             
@@ -169,8 +169,8 @@ export default function Trust() {
           <div className="bg-gradient-to-r from-primary to-accent p-8 rounded-3xl text-white">
             <div className="grid md:grid-cols-4 gap-8 text-center">
               <div>
-                <div className="text-4xl font-montserrat font-bold mb-2">100+</div>
-                <div className="text-white/90">UK Businesses Served</div>
+                <div className="text-4xl font-montserrat font-bold mb-2">500+</div>
+                <div className="text-white/90">UK Workers Empowered</div>
               </div>
               <div>
                 <div className="text-4xl font-montserrat font-bold mb-2">99.9%</div>
@@ -178,7 +178,7 @@ export default function Trust() {
               </div>
               <div>
                 <div className="text-4xl font-montserrat font-bold mb-2">24/7</div>
-                <div className="text-white/90">Support Coverage</div>
+                <div className="text-white/90">Team Support</div>
               </div>
               <div>
                 <div className="flex justify-center mb-2">
@@ -186,7 +186,7 @@ export default function Trust() {
                     <Star key={i} className="h-6 w-6 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <div className="text-white/90">Average Rating</div>
+                <div className="text-white/90">Team Satisfaction</div>
               </div>
             </div>
           </div>
@@ -196,12 +196,12 @@ export default function Trust() {
         <div className="mt-16 text-center">
           <div className="bg-gradient-to-r from-secondary to-white p-8 rounded-3xl border border-gray-100">
             <h3 className="text-2xl font-montserrat font-bold text-gray-900 mb-4">
-              🇬🇧 Proudly British, Expertly Delivered
+              🇬🇧 Proudly British, Team-Focused
             </h3>
             <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              As a UK-based company, we understand the unique challenges British businesses face. 
-              From GDPR compliance to local market nuances, we've got you covered with solutions 
-              built by Brits, for Brits.
+              As a UK-based company, we understand the unique challenges British teams face. 
+              From GDPR compliance to local workplace dynamics, we've got you covered with solutions 
+              designed to empower your people, not replace them.
             </p>
           </div>
         </div>

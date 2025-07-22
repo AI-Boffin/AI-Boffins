@@ -41,7 +41,7 @@ export default function Header() {
             </div>
           </div>
           <div className="hidden md:block">
-            <span className="text-accent font-medium">🇬🇧 UK-Based AI Experts</span>
+            <span className="text-accent font-medium">🇬🇧 Empowering UK Workers</span>
           </div>
         </div>
       </div>
@@ -58,9 +58,56 @@ export default function Header() {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
-              <div className="font-montserrat font-bold text-2xl text-primary">
-                AI <span className="text-accent">Boffins</span>
-              </div>
+              <svg 
+                className="h-14 w-auto cursor-pointer"
+                viewBox="0 0 400 150" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                {/* White circular background */}
+                <circle cx="200" cy="75" r="90" fill="#ffffff" />
+                
+                {/* Letters AI Boffins styled individually */}
+                <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle"
+                      fontFamily="'Poppins', sans-serif" fontSize="60" fontWeight="900" letterSpacing="-8">
+                  <tspan fill="rgb(30, 75, 124)">A</tspan>
+                  <tspan fill="#FFAA00">I</tspan>
+                  <tspan fill="rgb(45, 190, 127)">B</tspan>
+                  <tspan fill="rgb(30, 75, 124)">offins</tspan>
+                </text>
+                
+                {/* Spiral Overlay */}
+                <circle id="spiral" cx="200" cy="75" r="0" fill="none" stroke="#00F0FF" strokeWidth="10" opacity="0" />
+                
+                <style>
+                  {`
+                    svg:hover #spiral {
+                      animation: spiral-out 2s ease forwards;
+                    }
+                    @keyframes spiral-out {
+                      0% {
+                        r: 0;
+                        opacity: 0.7;
+                        stroke: rgb(30, 75, 124);
+                      }
+                      33% {
+                        r: 50;
+                        opacity: 0.5;
+                        stroke: rgb(45, 190, 127);
+                      }
+                      66% {
+                        r: 100;
+                        opacity: 0.3;
+                        stroke: #FFAA00;
+                      }
+                      100% {
+                        r: 150;
+                        opacity: 0;
+                        stroke: #FFAA00;
+                      }
+                    }
+                  `}
+                </style>
+              </svg>
               <div className="ml-2 text-xs text-muted-foreground hidden sm:block">
                 by IT Boffins
               </div>
@@ -106,7 +153,7 @@ export default function Header() {
                 onClick={() => scrollToSection('contact')}
                 className="bg-accent hover:bg-accent/90 text-white font-medium"
               >
-                Book Free Audit
+                Free Team Assessment
               </Button>
             </div>
 
@@ -164,7 +211,7 @@ export default function Header() {
                 onClick={() => scrollToSection('contact')}
                 className="w-full bg-accent hover:bg-accent/90 text-white font-medium mt-4"
               >
-                Book Free Audit
+                Free Team Assessment
               </Button>
             </div>
           </div>

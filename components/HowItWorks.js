@@ -1,65 +1,65 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { Search, Building as Build, Rocket, Headphones, CheckCircle } from 'lucide-react';
+import { Search, Building as Build, Rocket, Headphones, CheckCircle, Users, Target, Zap } from 'lucide-react';
 
 const steps = [
   {
     icon: Search,
     number: '01',
-    title: 'Discover',
-    subtitle: 'Free AI audit to map your processes',
-    description: 'We analyze your current workflows, identify automation opportunities, and create a tailored roadmap for your business.',
+    title: 'Team Assessment',
+    subtitle: 'Discover how AI can enhance your team\'s work',
+    description: 'We meet with your team to understand their current challenges, identify repetitive tasks, and map out opportunities for AI enhancement.',
     features: [
-      'Process mapping session',
-      'ROI calculation',
-      'Custom strategy document',
-      'No obligation consultation'
+      'Team workflow analysis',
+      'Repetitive task identification',
+      'ROI & productivity projections',
+      'Team feedback & concerns addressed'
     ],
     duration: '1-2 days',
     color: 'from-blue-500 to-primary'
   },
   {
-    icon: Build,
+    icon: Users,
     number: '02',
-    title: 'Build',
-    subtitle: 'Custom AI automation tailored to your needs',
-    description: 'Our expert team develops and configures your AI solutions, ensuring seamless integration with your existing systems.',
+    title: 'Team-Centric Design',
+    subtitle: 'Build AI solutions that work with your team',
+    description: 'We design AI solutions that complement your team\'s strengths, automate the boring stuff, and enhance their ability to achieve more.',
     features: [
-      'Custom AI development',
-      'System integrations',
-      'Testing & quality assurance',
-      'Staff training materials'
+      'Team-focused AI design',
+      'Seamless system integration',
+      'User-friendly interfaces',
+      'Comprehensive training plans'
     ],
     duration: '1-2 weeks',
     color: 'from-accent to-green-600'
   },
   {
-    icon: Rocket,
+    icon: Target,
     number: '03',
-    title: 'Launch',
-    subtitle: 'Go live in as little as 7–14 days',
-    description: 'Smooth deployment with comprehensive testing, staff training, and phased rollout to ensure zero disruption to your business.',
+    title: 'Team Launch',
+    subtitle: 'Roll out AI with full team support',
+    description: 'Gradual implementation with comprehensive training, ensuring your team feels confident and excited about their new AI tools.',
     features: [
-      'Phased deployment',
-      'Comprehensive testing',
-      'Team training sessions',
-      'Performance monitoring'
+      'Phased team rollout',
+      'Hands-on training sessions',
+      'Performance monitoring',
+      'Continuous feedback loop'
     ],
     duration: '3-5 days',
     color: 'from-purple-500 to-primary'
   },
   {
-    icon: Headphones,
+    icon: Zap,
     number: '04',
-    title: 'Support',
-    subtitle: 'Ongoing tuning, updates, and growth help',
-    description: 'Continuous optimization, regular updates, and dedicated UK-based support to ensure your AI solutions evolve with your business.',
+    title: 'Team Success',
+    subtitle: 'Ongoing optimization and growth support',
+    description: 'Continuous improvement, new feature rollouts, and dedicated support to ensure your team keeps achieving more and enjoying their work.',
     features: [
-      '24/7 monitoring',
-      'Regular optimizations',
-      'Feature updates',
-      'Dedicated UK support'
+      'Performance optimization',
+      'New feature training',
+      'Team success monitoring',
+      'Dedicated UK support team'
     ],
     duration: 'Ongoing',
     color: 'from-orange-500 to-accent'
@@ -99,16 +99,18 @@ export default function HowItWorks() {
         {/* Header */}
         <div className="text-center space-y-6 mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium">
-            How We Get You Automated
+            How We Empower Your Team
           </div>
           
           <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-gray-900">
-            From idea to implementation in{' '}
-            <span className="text-primary">just 4 simple steps</span>
+            From team assessment to{' '}
+            <span className="text-primary">team success</span>{' '}
+            in 4 simple steps
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our proven methodology ensures quick deployment without disrupting your business operations.
+            Our proven approach puts your team first, ensuring AI enhances their work 
+            rather than replacing it. Everyone wins.
           </p>
         </div>
 
@@ -252,13 +254,13 @@ export default function HowItWorks() {
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
           <div className="inline-flex items-center px-6 py-3 bg-primary/5 text-primary rounded-full text-lg font-medium mb-4">
-            Ready to get started? It all begins with a free consultation.
+            Ready to empower your team? Let's start with a free assessment.
           </div>
           <button 
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             className="bg-gradient-to-r from-primary to-accent text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105"
           >
-            Book Your Free AI Audit Today
+            Book Your Free Team Assessment
           </button>
         </div>
       </div>

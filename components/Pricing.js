@@ -3,77 +3,77 @@
 import { useState, useEffect, useRef } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Check, Star, ArrowRight, MessageSquare } from 'lucide-react';
+import { Check, Star, ArrowRight, MessageSquare, Users, Target, Zap } from 'lucide-react';
 
 const plans = [
   {
-    name: 'Starter',
-    description: 'Perfect for small businesses getting started with AI',
+    name: 'Team Starter',
+    description: 'Perfect for small teams ready to eliminate boring tasks',
     setupFee: 'From £500',
     monthlyFee: '£99',
     badge: 'Most Popular',
     color: 'border-accent shadow-accent/20',
     headerColor: 'bg-accent',
     features: [
-      '1 AI solution implementation',
-      'Basic automation workflows',
-      'Email & chat support',
-      'Monthly performance reports',
+      '1 AI solution for your team',
+      'Basic task automation',
+      'Team training included',
+      'Monthly performance insights',
       'GDPR compliance included',
-      'Up to 1,000 transactions/month',
+      'Up to 1,000 team actions/month',
       'Standard integrations (Email, Calendar)',
-      '30-day money-back guarantee'
+      '30-day satisfaction guarantee'
     ],
     notIncluded: [
-      'Custom integrations',
+      'Custom team workflows',
       'Priority support',
-      'Advanced analytics'
+      'Advanced team analytics'
     ]
   },
   {
-    name: 'Pro',
-    description: 'Ideal for growing businesses with multiple automation needs',
+    name: 'Team Pro',
+    description: 'Ideal for growing teams with multiple automation needs',
     setupFee: '£1,500 – £3,000',
     monthlyFee: '£299',
     badge: 'Best Value',
     color: 'border-primary shadow-primary/20',
     headerColor: 'bg-primary',
     features: [
-      'Up to 3 AI solutions',
+      'Up to 3 AI solutions for your team',
       'Advanced workflow automation',
-      'Priority email & phone support',
-      'Weekly performance reports',
+      'Priority team support',
+      'Weekly performance tracking',
       'GDPR compliance included',
-      'Up to 10,000 transactions/month',
+      'Up to 10,000 team actions/month',
       'Custom integrations (CRM, SMS, etc.)',
-      'Dedicated account manager',
-      'Quarterly strategy reviews'
+      'Dedicated team success manager',
+      'Quarterly team optimization reviews'
     ],
     notIncluded: [
-      'Unlimited automations',
+      'Unlimited team automations',
       '24/7 phone support'
     ]
   },
   {
-    name: 'Enterprise',
-    description: 'Fully tailored solutions for large organizations',
+    name: 'Team Enterprise',
+    description: 'Fully tailored solutions for large teams and organizations',
     setupFee: 'Custom Quote',
     monthlyFee: 'From £499',
     badge: 'Full Service',
     color: 'border-gray-300 shadow-lg',
     headerColor: 'bg-gradient-to-r from-primary to-accent',
     features: [
-      'Unlimited AI solutions',
-      'Fully custom automations',
-      '24/7 priority support',
-      'Real-time analytics dashboard',
+      'Unlimited AI solutions for your team',
+      'Fully custom team automations',
+      '24/7 priority team support',
+      'Real-time team performance dashboard',
       'GDPR compliance included',
-      'Unlimited transactions',
+      'Unlimited team actions',
       'All integrations included',
-      'Dedicated technical team',
-      'Monthly strategy sessions',
+      'Dedicated team success team',
+      'Monthly team strategy sessions',
       'SLA guarantees',
-      'White-label options available'
+      'Custom team training programs'
     ],
     notIncluded: []
   }
@@ -116,11 +116,11 @@ export default function Pricing() {
           
           <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-gray-900">
             Choose the plan that{' '}
-            <span className="text-accent">fits your business</span>
+            <span className="text-accent">empowers your team</span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            No hidden fees, no surprises. Just clear pricing that scales with your business growth.
+            No hidden fees, no surprises. Just clear pricing that helps your team achieve more and enjoy their work.
           </p>
         </div>
 
@@ -128,7 +128,7 @@ export default function Pricing() {
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {plans.map((plan, index) => {
             const isVisible = visibleCards.includes(index);
-            const isPopular = plan.name === 'Starter';
+            const isPopular = plan.name === 'Team Starter';
             
             return (
               <div
@@ -213,7 +213,7 @@ export default function Pricing() {
                           : 'bg-primary hover:bg-primary/90 text-white'
                       } font-semibold py-3 h-auto group transition-all duration-300`}
                     >
-                      {plan.name === 'Enterprise' ? 'Get Custom Quote' : 'Get Started'}
+                      {plan.name === 'Team Enterprise' ? 'Get Custom Quote' : 'Empower Your Team'}
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
 
@@ -221,7 +221,7 @@ export default function Pricing() {
                     <div className="mt-4 text-center">
                       <div className="flex items-center justify-center text-sm text-gray-500">
                         <MessageSquare className="h-4 w-4 mr-1" />
-                        <span>Free consultation included</span>
+                        <span>Free team assessment included</span>
                       </div>
                     </div>
                   </CardContent>
@@ -235,26 +235,26 @@ export default function Pricing() {
         <div className="text-center space-y-8">
           <div className="bg-gradient-to-r from-primary/5 to-accent/5 p-8 rounded-3xl border border-gray-100">
             <h3 className="text-2xl font-montserrat font-bold text-gray-900 mb-4">
-              Not sure what fits? Let's find out together.
+              Not sure what's right for your team? Let's find out together.
             </h3>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Every business is unique. Book a free consultation and we'll recommend the perfect plan 
-              based on your specific needs and growth goals.
+              Every team is unique. Book a free assessment and we'll recommend the perfect plan 
+              based on your team's specific challenges and goals.
             </p>
             <Button 
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               size="lg"
               className="bg-primary hover:bg-primary/90 text-white px-8 py-4 h-auto font-semibold"
             >
-              Book Free Consultation
+              Book Free Team Assessment
             </Button>
           </div>
 
           {/* FAQ Links */}
           <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-600">
-            <span>💡 All plans include GDPR compliance</span>
-            <span>🔒 Your data stays secure and private</span>
-            <span>🇬🇧 UK-based support team</span>
+            <span>💡 All plans include team training</span>
+            <span>🔒 Your team's data stays secure</span>
+            <span>🇬🇧 UK-based team support</span>
             <span>⚡ Implementation in 7-14 days</span>
           </div>
         </div>

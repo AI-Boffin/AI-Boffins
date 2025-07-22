@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Phone, Mail, MapPin, Calendar, Send, CheckCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Calendar, Send, CheckCircle, Users } from 'lucide-react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -56,18 +56,18 @@ export default function Contact() {
         {/* Header */}
         <div className="text-center space-y-6 mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium">
-            Ready to Start? Let's Chat.
+            Ready to Empower Your Team? Let's Chat.
           </div>
           
           <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-gray-900">
             Get your{' '}
-            <span className="text-primary">free AI audit</span>{' '}
+            <span className="text-primary">free team assessment</span>{' '}
             today
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Book a consultation or send us a message. We'll show you exactly how AI 
-            can transform your business operations.
+            can help your team achieve more and enjoy their work.
           </p>
         </div>
 
@@ -83,7 +83,7 @@ export default function Contact() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600 mb-2">Speak to our AI experts</p>
+                <p className="text-gray-600 mb-2">Speak to our team empowerment experts</p>
                 <a 
                   href="tel:01234567890"
                   className="text-xl font-semibold text-primary hover:text-accent transition-colors"
@@ -102,7 +102,7 @@ export default function Contact() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600 mb-2">Send us your requirements</p>
+                <p className="text-gray-600 mb-2">Send us your team's challenges</p>
                 <a 
                   href="mailto:hello@aiboffins.co.uk"
                   className="text-xl font-semibold text-primary hover:text-accent transition-colors"
@@ -125,7 +125,7 @@ export default function Contact() {
                 <p className="text-xl font-semibold text-primary">
                   Milton Keynes, UK
                 </p>
-                <p className="text-sm text-gray-500 mt-2">Serving businesses nationwide</p>
+                <p className="text-sm text-gray-500 mt-2">Serving teams nationwide</p>
               </CardContent>
             </Card>
 
@@ -139,7 +139,7 @@ export default function Contact() {
               </CardHeader>
               <CardContent>
                 <p className="text-white/90 mb-4">
-                  Schedule a free 30-minute consultation to discuss your AI automation needs.
+                  Schedule a free 30-minute consultation to discuss how AI can empower your team.
                 </p>
                 <Button 
                   className="w-full bg-white text-primary hover:bg-gray-100 font-semibold"
@@ -148,7 +148,7 @@ export default function Contact() {
                     window.open('https://calendly.com/aiboffins', '_blank');
                   }}
                 >
-                  Schedule Free Consultation
+                  Schedule Free Team Assessment
                 </Button>
                 <p className="text-white/70 text-sm mt-3 text-center">
                   No commitment • Free expert advice
@@ -162,10 +162,10 @@ export default function Contact() {
             <Card className="shadow-xl border-0">
               <CardHeader>
                 <CardTitle className="text-2xl font-montserrat font-bold text-gray-900">
-                  Send us a message
+                  Tell us about your team
                 </CardTitle>
                 <p className="text-gray-600">
-                  Tell us about your business and we'll recommend the perfect AI solution.
+                  Share your team's challenges and we'll show you how AI can help them achieve more.
                 </p>
               </CardHeader>
               <CardContent>
@@ -179,8 +179,8 @@ export default function Contact() {
                       We've received your message and will get back to you within 2 hours.
                     </p>
                     <div className="bg-accent/10 text-accent p-4 rounded-lg inline-block">
-                      <strong>Next steps:</strong> We'll analyze your requirements and prepare 
-                      a custom AI automation plan for your business.
+                      <strong>Next steps:</strong> We'll analyze your team's challenges and prepare 
+                      a custom AI empowerment plan to help them achieve more.
                     </div>
                   </div>
                 ) : (
@@ -252,7 +252,7 @@ export default function Contact() {
 
                     <div>
                       <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
-                        Which service interests you most?
+                        Which area would help your team most?
                       </label>
                       <select
                         id="service"
@@ -261,11 +261,11 @@ export default function Contact() {
                         onChange={handleInputChange}
                         className="w-full h-12 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                       >
-                        <option value="">Select a service</option>
-                        <option value="customer-support">AI Customer Support</option>
-                        <option value="document-automation">Document Automation</option>
-                        <option value="workflow-automation">Workflow Automation</option>
-                        <option value="lead-generation">Lead Generation AI</option>
+                        <option value="">Select an area</option>
+                        <option value="eliminate-boring-tasks">Eliminate Boring Tasks</option>
+                        <option value="boost-performance">Boost Team Performance</option>
+                        <option value="enhance-collaboration">Enhance Team Collaboration</option>
+                        <option value="accelerate-growth">Accelerate Growth</option>
                         <option value="custom">Custom Solution</option>
                         <option value="consultation">Just want a consultation</option>
                       </select>
@@ -273,14 +273,14 @@ export default function Contact() {
 
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                        Tell us about your business *
+                        Tell us about your team's challenges *
                       </label>
                       <Textarea
                         id="message"
                         name="message"
                         value={formData.message}
                         onChange={handleInputChange}
-                        placeholder="What challenges are you facing? What processes take up most of your time? How many team members do you have?"
+                        placeholder="What repetitive tasks frustrate your team? What would they rather be doing? How many team members do you have? What are their main pain points?"
                         required
                         className="min-h-[120px]"
                       />
@@ -290,8 +290,8 @@ export default function Contact() {
                       <div className="flex items-start space-x-3">
                         <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
                         <div className="text-sm text-gray-600">
-                          <strong>What happens next?</strong> We'll review your requirements and send you a 
-                          custom AI automation plan within 24 hours, including potential cost savings and implementation timeline.
+                          <strong>What happens next?</strong> We'll review your team's challenges and send you a 
+                          custom AI empowerment plan within 24 hours, including potential productivity gains and implementation timeline.
                         </div>
                       </div>
                     </div>
@@ -309,7 +309,7 @@ export default function Contact() {
                         </div>
                       ) : (
                         <>
-                          Send Message & Get Free AI Plan
+                          Send Message & Get Free Team Plan
                           <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                         </>
                       )}

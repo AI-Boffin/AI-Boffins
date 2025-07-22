@@ -32,8 +32,8 @@ export default function Footer() {
             </div>
             
             <p className="text-white/90 leading-relaxed">
-              AI automation solutions for UK businesses. Save time, cut costs, 
-              and boost productivity with our GDPR-compliant AI systems.
+              AI solutions that empower UK teams. Eliminate boring tasks, boost productivity, 
+              and help your people achieve more with our GDPR-compliant AI systems.
             </p>
 
             {/* Trust Badges */}
@@ -42,10 +42,10 @@ export default function Footer() {
                 🇬🇧 UK-Based
               </span>
               <span className="bg-white/20 text-white px-3 py-1 rounded-full text-xs font-medium">
-                GDPR Compliant
+                Team-Focused
               </span>
               <span className="bg-white/20 text-white px-3 py-1 rounded-full text-xs font-medium">
-                ISO 27001
+                GDPR Compliant
               </span>
             </div>
           </div>
@@ -69,7 +69,7 @@ export default function Footer() {
                   onClick={() => scrollToSection('solutions')}
                   className="text-white/80 hover:text-accent transition-colors text-sm"
                 >
-                  AI Solutions
+                  Team Solutions
                 </button>
               </li>
               <li>
@@ -110,20 +110,20 @@ export default function Footer() {
           {/* Services */}
           <div>
             <h3 className="font-montserrat font-semibold text-lg mb-6 text-white">
-              AI Services
+              Team Empowerment
             </h3>
             <ul className="space-y-3">
-              <li className="text-white/80 text-sm">AI Customer Support</li>
-              <li className="text-white/80 text-sm">Document Automation</li>
-              <li className="text-white/80 text-sm">Workflow Automation</li>
-              <li className="text-white/80 text-sm">Lead Generation AI</li>
-              <li className="text-white/80 text-sm">Custom AI Solutions</li>
+              <li className="text-white/80 text-sm">Eliminate Boring Tasks</li>
+              <li className="text-white/80 text-sm">Boost Team Performance</li>
+              <li className="text-white/80 text-sm">Enhance Collaboration</li>
+              <li className="text-white/80 text-sm">Accelerate Growth</li>
+              <li className="text-white/80 text-sm">Custom Team Solutions</li>
               <li>
                 <button 
                   onClick={() => scrollToSection('contact')}
                   className="text-accent hover:text-accent/80 transition-colors text-sm font-medium"
                 >
-                  Free AI Audit →
+                  Free Team Assessment →
                 </button>
               </li>
             </ul>
@@ -165,7 +165,7 @@ export default function Footer() {
                 <MapPin className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-white/90 text-sm">Milton Keynes, UK</p>
-                  <p className="text-white/60 text-xs">Serving businesses nationwide</p>
+                  <p className="text-white/60 text-xs">Serving teams nationwide</p>
                 </div>
               </div>
             </div>
