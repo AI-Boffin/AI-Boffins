@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { Search, Building as Build, Rocket, Headphones, CheckCircle, Users, Target, Zap } from 'lucide-react';
+import { Search, Building as Build, Rocket, Headphones, CheckCircle, Users, Target, Zap, BarChart3 } from 'lucide-react';
 
 const steps = [
   {
@@ -91,6 +91,15 @@ export default function HowItWorks() {
     return () => {
       observers.forEach(observer => observer?.disconnect());
     };
+  }, []);
+
+  // Ensure steps are visible on desktop immediately to avoid perceived white space
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const isLargeScreen = window.matchMedia('(min-width: 1024px)').matches; // lg breakpoint
+    if (isLargeScreen) {
+      setVisibleSteps(Array.from({ length: steps.length }, (_, index) => index));
+    }
   }, []);
 
   return (
@@ -252,7 +261,28 @@ export default function HowItWorks() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-16 text-center">
+        <div className="mt-8 text-center">
+          {/* Site Analyser CTA */}
+          <div className="mb-10 p-8 rounded-3xl bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 border border-primary/20 shadow-sm">
+            <div className="inline-flex items-center px-3 py-1 mb-3 rounded-full bg-accent/10 text-accent text-sm font-medium">
+              Site Analyser
+            </div>
+            <h3 className="text-2xl md:text-3xl font-montserrat font-bold text-gray-900 mb-2">
+              Already have a site? See how it scores on our site analyser website!
+            </h3>
+            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+              Get an instant snapshot of performance, accessibility and SEO.
+            </p>
+            <a
+              href="https://siteanalyser-7hjxyf25z-ai-boffins.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center bg-gradient-to-r from-primary to-accent text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105"
+            >
+              <BarChart3 className="h-5 w-5 mr-2" />
+              Open Site Analyser
+            </a>
+          </div>
           <div className="inline-flex items-center px-6 py-3 bg-primary/5 text-primary rounded-full text-lg font-medium mb-4">
             Ready to empower your team? Let's start with a free assessment.
           </div>
