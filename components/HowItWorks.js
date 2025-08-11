@@ -274,7 +274,7 @@ export default function HowItWorks() {
               Get an instant snapshot of performance, accessibility and SEO.
             </p>
             <a
-              href="https://siteanalyser-7hjxyf25z-ai-boffins.vercel.app/"
+              href="https://siteanalyser.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center bg-gradient-to-r from-primary to-accent text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105"
