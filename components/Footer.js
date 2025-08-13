@@ -152,10 +152,10 @@ export default function Footer() {
                 <Mail className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
                 <div>
                   <a 
-                    href="mailto:hello@aiboffins.co.uk"
+                    href="mailto:info@aiboffins.co.uk"
                     className="text-white/90 hover:text-accent transition-colors text-sm"
                   >
-                    hello@aiboffins.co.uk
+                    info@aiboffins.co.uk
                   </a>
                   <p className="text-white/60 text-xs">We respond within 2 hours</p>
                 </div>

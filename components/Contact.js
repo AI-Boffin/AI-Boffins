@@ -88,9 +88,9 @@ export default function Contact() {
                   href="tel:01234567890"
                   className="text-xl font-semibold text-primary hover:text-accent transition-colors"
                 >
-                  01234 567890
+                  01908 410917
                 </a>
-                <p className="text-sm text-gray-500 mt-2">Mon-Fri, 9am-6pm GMT</p>
+                <p className="text-sm text-gray-500 mt-2">Mon-Fri, 930am-430pm GMT</p>
               </CardContent>
             </Card>
 
@@ -104,10 +104,10 @@ export default function Contact() {
               <CardContent>
                 <p className="text-gray-600 mb-2">Send us your team's challenges</p>
                 <a 
-                  href="mailto:hello@aiboffins.co.uk"
+                  href="mailto:info@aiboffins.co.uk"
                   className="text-xl font-semibold text-primary hover:text-accent transition-colors"
                 >
-                  hello@aiboffins.co.uk
+                  info@aiboffins.co.uk
                 </a>
                 <p className="text-sm text-gray-500 mt-2">We respond within 2 hours</p>
               </CardContent>

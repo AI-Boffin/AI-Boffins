@@ -33,11 +33,11 @@ export default function Header() {
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">
               <Phone className="h-4 w-4" />
-              <span>Call us: 01234 567890</span>
+              <span>Call us: 01908 410917</span>
             </div>
             <div className="flex items-center space-x-2">
               <Mail className="h-4 w-4" />
-              <span>hello@aiboffins.co.uk</span>
+              <span>info@aiboffins.co.uk</span>
             </div>
           </div>
           <div className="hidden md:block">
