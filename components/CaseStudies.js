@@ -7,49 +7,68 @@ import { Quote, ArrowRight, TrendingUp, Clock, DollarSign, Users, Smile, Target 
 
 const caseStudies = [
   {
-    company: 'Logistics Company',
-    location: 'Milton Keynes',
-    industry: 'Transport & Logistics',
-    challenge: 'Team overwhelmed with repetitive admin tasks and customer queries',
-    solution: 'AI automation that freed up time for strategic work and customer relationships',
+    company: 'E-commerce Retailer',
+    location: 'Manchester',
+    industry: 'Online Retail',
+    challenge: 'Customer support team overwhelmed with 200+ daily queries, 80% were repetitive FAQs',
+    solution: 'AI Chatbot + Live Chat Support that handles 70% of queries automatically',
     results: {
-      timeSaved: '60 hours/month',
-      teamProductivity: '+75%',
-      jobSatisfaction: '92%'
+      timeSaved: '15 hours/week',
+      responseTime: '90% faster',
+      customerSatisfaction: '+45%'
     },
-    quote: "Our team was drowning in admin work. Now they're focused on building relationships and growing the business. Sarah, our customer service lead, says she finally feels like she's making a real impact.",
+    quote: "Our support team was drowning in repetitive questions. Now the AI chatbot handles the basics while our team focuses on complex issues. Sarah, our support lead, says she finally has time to provide excellent service.",
     icon: Users,
-    color: 'from-blue-500 to-primary'
+    color: 'from-blue-500 to-primary',
+    service: 'AI Chatbot + Live Chat'
   },
   {
-    company: 'Estate Agency',
-    location: 'Buckinghamshire',
-    industry: 'Real Estate',
-    challenge: 'Agents spending 40% of time on paperwork instead of clients',
-    solution: 'AI-powered automation that lets agents focus on what they do best',
+    company: 'Marketing Agency',
+    location: 'Birmingham',
+    industry: 'Digital Marketing',
+    challenge: 'Content team spending 25 hours/week on blog posts and social media content',
+    solution: 'Automated Content Generation & Marketing that produces 80% of routine content',
     results: {
-      timeSaved: '40% admin reduction',
-      clientSatisfaction: '+60%',
-      agentEarnings: '+35%'
+      timeSaved: '20 hours/week',
+      contentOutput: '+300%',
+      teamProductivity: '+60%'
     },
-    quote: "Our agents were frustrated with all the paperwork. Now they're closing more deals and earning more money. Mike hit 120% of his target last month and couldn't be happier.",
+    quote: "Our content team was stuck in a rut of repetitive writing. Now AI generates the first draft and our team adds creativity and strategy. Mike, our content director, says they're producing 3x more content with better quality.",
     icon: Target,
-    color: 'from-accent to-green-600'
+    color: 'from-accent to-green-600',
+    service: 'Content Generation & Marketing'
   },
   {
-    company: 'Manufacturing SME',
-    location: 'Bedfordshire',
-    industry: 'Manufacturing',
-    challenge: 'Operations team stuck in manual processes and error-prone tasks',
-    solution: 'AI automation that eliminated boring tasks and boosted accuracy',
+    company: 'B2B Sales Company',
+    location: 'Leeds',
+    industry: 'Business Services',
+    challenge: 'Sales team losing leads due to slow follow-up and poor lead scoring',
+    solution: 'AI-Enhanced CRM & Sales Workflow with automated lead scoring and follow-ups',
+    results: {
+      leadConversion: '+40%',
+      followUpTime: '90% faster',
+      salesRevenue: '+35%'
+    },
+    quote: "Our sales team was missing opportunities because they couldn't follow up fast enough. Now AI prioritizes leads and sends personalized follow-ups automatically. The whole team is hitting targets they never thought possible.",
+    icon: Smile,
+    color: 'from-purple-500 to-primary',
+    service: 'CRM & Sales AI'
+  },
+  {
+    company: 'Legal Practice',
+    location: 'Edinburgh',
+    industry: 'Legal Services',
+    challenge: 'Paralegals spending 30+ hours/week on document transcription and admin tasks',
+    solution: 'AI Transcription & Admin Automation that handles 85% of routine document processing',
     results: {
       timeSaved: '25 hours/week',
-      errorReduction: '99%',
-      teamMorale: '+80%'
+      accuracy: '99.5%',
+      clientTurnaround: '+50% faster'
     },
-    quote: "Our operations team was making mistakes and feeling demotivated. Now they're focused on process improvement and innovation. The whole team is more engaged and productive.",
-    icon: Smile,
-    color: 'from-purple-500 to-primary'
+    quote: "Our paralegals were stuck doing mind-numbing transcription work. Now AI handles the routine stuff and they focus on legal research and client service. The whole practice is more efficient and our clients love the faster turnaround.",
+    icon: Clock,
+    color: 'from-orange-500 to-accent',
+    service: 'Transcription & Admin AI'
   }
 ];
 
@@ -95,7 +114,7 @@ export default function CaseStudies() {
         {/* Header */}
         <div className="text-center space-y-6 mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium">
-            See How AI Empowers Teams
+            See How Our Four AI Services Transform Teams
           </div>
           
           <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-gray-900">
@@ -104,8 +123,8 @@ export default function CaseStudies() {
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover how teams across the UK are eliminating boring tasks, 
-            achieving more, and actually enjoying their work with AI automation.
+            Discover how UK teams are using our four core AI services to eliminate repetitive tasks, 
+            boost productivity, and actually enjoy their work.
           </p>
         </div>
 
@@ -124,6 +143,9 @@ export default function CaseStudies() {
                 {/* Quote Side */}
                 <div className="space-y-6">
                   <Quote className="h-12 w-12 text-white/80" />
+                  <div className="inline-flex items-center px-3 py-1 bg-white/20 rounded-full text-sm mb-4">
+                    {caseStudies[activeCase].service}
+                  </div>
                   <blockquote className="text-2xl md:text-3xl font-light leading-relaxed">
                     {caseStudies[activeCase].quote}
                   </blockquote>
@@ -204,6 +226,8 @@ export default function CaseStudies() {
                     
                     <div className="space-y-3 mb-6">
                       <div>
+                        <div className="text-xs font-medium text-gray-500 uppercase tracking-wide">AI Service Used</div>
+                        <div className="text-sm font-medium text-primary mb-2">{caseStudy.service}</div>
                         <div className="text-xs font-medium text-gray-500 uppercase tracking-wide">Team Challenge</div>
                         <div className="text-sm text-gray-700">{caseStudy.challenge}</div>
                       </div>
@@ -239,11 +263,11 @@ export default function CaseStudies() {
         >
           <div className="bg-gradient-to-r from-secondary to-white p-8 rounded-3xl border border-gray-100">
             <h3 className="text-2xl font-montserrat font-bold text-gray-900 mb-4">
-              Ready to empower your team?
+              Ready to see similar results for your team?
             </h3>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Join hundreds of UK teams already achieving more and enjoying their work with AI automation. 
-              Let's show you how your team can benefit.
+              Join UK teams already saving 15+ hours per week with our four proven AI services. 
+              Let's show you which service will give you the biggest productivity boost.
             </p>
             <Button 
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}

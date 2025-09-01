@@ -125,7 +125,7 @@ export default function Header() {
                 onClick={() => scrollToSection('solutions')}
                 className="text-gray-700 hover:text-primary transition-colors font-medium"
               >
-                Solutions
+                Our Services
               </button>
               <button 
                 onClick={() => scrollToSection('pricing')}
@@ -187,7 +187,7 @@ export default function Header() {
                 onClick={() => scrollToSection('solutions')}
                 className="block w-full text-left text-gray-700 hover:text-primary transition-colors font-medium py-2"
               >
-                Solutions
+                Our Services
               </button>
               <button 
                 onClick={() => scrollToSection('pricing')}

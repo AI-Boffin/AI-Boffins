@@ -7,61 +7,61 @@ const steps = [
   {
     icon: Search,
     number: '01',
-    title: 'Team Assessment',
-    subtitle: 'Discover how AI can enhance your team\'s work',
-    description: 'We meet with your team to understand their current challenges, identify repetitive tasks, and map out opportunities for AI enhancement.',
+    title: 'Free Team Assessment',
+    subtitle: 'Discover which AI service fits your needs',
+    description: 'We analyze your team\'s biggest pain points and recommend the AI service that will deliver the fastest ROI.',
     features: [
-      'Team workflow analysis',
-      'Repetitive task identification',
-      'ROI & productivity projections',
-      'Team feedback & concerns addressed'
+      'Team productivity analysis',
+      'Service recommendation',
+      'ROI projections',
+      'Implementation timeline'
     ],
-    duration: '1-2 days',
+    duration: '30 mins',
     color: 'from-blue-500 to-primary'
   },
   {
-    icon: Users,
+    icon: Build,
     number: '02',
-    title: 'Team-Centric Design',
-    subtitle: 'Build AI solutions that work with your team',
-    description: 'We design AI solutions that complement your team\'s strengths, automate the boring stuff, and enhance their ability to achieve more.',
+    title: 'Quick Installation',
+    subtitle: 'Get your AI service running in under an hour',
+    description: 'We install and configure your chosen AI service, ensuring it integrates seamlessly with your existing workflows.',
     features: [
-      'Team-focused AI design',
-      'Seamless system integration',
-      'User-friendly interfaces',
-      'Comprehensive training plans'
+      'Same-day installation',
+      'System integration',
+      'Basic configuration',
+      'Team access setup'
     ],
-    duration: '1-2 weeks',
+    duration: '15 mins - 1 hour',
     color: 'from-accent to-green-600'
   },
   {
-    icon: Target,
+    icon: Users,
     number: '03',
-    title: 'Team Launch',
-    subtitle: 'Roll out AI with full team support',
-    description: 'Gradual implementation with comprehensive training, ensuring your team feels confident and excited about their new AI tools.',
+    title: 'Team Training',
+    subtitle: 'Get your team up and running quickly',
+    description: 'Comprehensive 1-hour training session to ensure your team feels confident using their new AI tools.',
     features: [
-      'Phased team rollout',
-      'Hands-on training sessions',
-      'Performance monitoring',
-      'Continuous feedback loop'
+      '1-hour training session',
+      'Best practices guide',
+      'Q&A support',
+      'Performance tips'
     ],
-    duration: '3-5 days',
+    duration: '1 hour',
     color: 'from-purple-500 to-primary'
   },
   {
-    icon: Zap,
+    icon: Rocket,
     number: '04',
-    title: 'Team Success',
-    subtitle: 'Ongoing optimization and growth support',
-    description: 'Continuous improvement, new feature rollouts, and dedicated support to ensure your team keeps achieving more and enjoying their work.',
+    title: 'See Results in a Week',
+    subtitle: 'Start experiencing productivity gains immediately',
+    description: 'Your team begins seeing time savings and productivity improvements within the first week of use.',
     features: [
-      'Performance optimization',
-      'New feature training',
-      'Team success monitoring',
-      'Dedicated UK support team'
+      'Immediate time savings',
+      'Performance monitoring',
+      'Ongoing support',
+      'Upgrade opportunities'
     ],
-    duration: 'Ongoing',
+    duration: '1 week',
     color: 'from-orange-500 to-accent'
   }
 ];
@@ -108,18 +108,17 @@ export default function HowItWorks() {
         {/* Header */}
         <div className="text-center space-y-6 mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium">
-            How We Empower Your Team
+            How We Get You Started
           </div>
           
           <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-gray-900">
-            From team assessment to{' '}
-            <span className="text-primary">team success</span>{' '}
-            in 4 simple steps
+            From assessment to{' '}
+            <span className="text-primary">ROI in under a week</span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our proven approach puts your team first, ensuring AI enhances their work 
-            rather than replacing it. Everyone wins.
+            Our streamlined process gets your chosen AI service up and running quickly, 
+            so your team can start seeing productivity gains immediately.
           </p>
         </div>
 

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, CheckCircle, PlayCircle, Users, TrendingUp, Smile } from 'lucide-react';
+import { ArrowRight, CheckCircle, PlayCircle, Users, TrendingUp, Smile, Clock, Zap } from 'lucide-react';
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
@@ -33,62 +33,61 @@ export default function Hero() {
             {/* Badge */}
             <div className="inline-flex items-center px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium border border-accent/20">
               <Users className="h-4 w-4 mr-2" />
-              Empowering 500+ UK workers daily
+              UK-based AI specialists since 2024
             </div>
 
             {/* Main Headline */}
             <div className="space-y-4">
               <h1 className="text-4xl md:text-6xl font-montserrat font-bold text-gray-900 leading-tight">
-                AI that{' '}
-                <span className="text-primary">empowers your team</span>{' '}
-                to achieve more
+                Four Fast-Track AI Tools{' '}
+                <span className="text-primary">British SMEs Can Install Today</span>
               </h1>
               
               <p className="text-xl md:text-2xl text-gray-600 font-light leading-relaxed">
-                Transform boring, repetitive tasks into opportunities for growth. 
-                <span className="text-accent font-medium"> Help your team hit higher targets</span>, earn more, and actually enjoy coming to work.
+                Install in a morning. Start seeing ROI by next week.{' '}
+                <span className="text-accent font-medium">No job losses—only enhancement.</span>
               </p>
             </div>
 
             {/* Benefits */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700">
               <div className="flex items-center space-x-3">
-                <CheckCircle className="h-5 w-5 text-accent flex-shrink-0" />
-                <span>Free up 15+ hours for meaningful work</span>
+                <Clock className="h-5 w-5 text-accent flex-shrink-0" />
+                <span>Free up 10+ hours per week</span>
               </div>
               <div className="flex items-center space-x-3">
                 <TrendingUp className="h-5 w-5 text-accent flex-shrink-0" />
-                <span>Boost team productivity by 60%</span>
+                <span>Boost productivity by 40%</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Smile className="h-5 w-5 text-accent flex-shrink-0" />
-                <span>Increase job satisfaction & retention</span>
+                <Zap className="h-5 w-5 text-accent flex-shrink-0" />
+                <span>GDPR-compliant UK solutions</span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="h-5 w-5 text-accent flex-shrink-0" />
-                <span>UK-based, worker-friendly solutions</span>
+                <span>15-minute installation time</span>
               </div>
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
-                onClick={() => scrollToSection('contact')}
+                onClick={() => scrollToSection('solutions')}
                 size="lg"
                 className="bg-accent hover:bg-accent/90 text-white text-lg px-8 py-4 h-auto group transition-all duration-300 hover:shadow-lg hover:shadow-accent/25"
               >
-                See How We Help Your Team
+                See Our Four AI Services
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               
               <Button 
-                onClick={() => scrollToSection('how-it-works')}
+                onClick={() => scrollToSection('contact')}
                 variant="outline"
                 size="lg"
                 className="border-primary text-primary hover:bg-primary hover:text-white text-lg px-8 py-4 h-auto group transition-all duration-300"
               >
                 <PlayCircle className="mr-2 h-5 w-5" />
-                Watch How It Works
+                Free Team Assessment
               </Button>
             </div>
 
@@ -100,7 +99,7 @@ export default function Hero() {
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-3 h-3 bg-primary rounded-full"></div>
-                <span>Team training included</span>
+                <span>1-hour training included</span>
               </div>
             </div>
           </div>
@@ -111,7 +110,7 @@ export default function Hero() {
               {/* Mock Dashboard */}
               <div className="bg-white rounded-2xl p-6 space-y-6">
                 <div className="flex items-center justify-between">
-                  <h3 className="font-montserrat font-semibold text-gray-900">Team Performance Dashboard</h3>
+                  <h3 className="font-montserrat font-semibold text-gray-900">AI Services Dashboard</h3>
                   <div className="flex space-x-2">
                     <div className="w-3 h-3 bg-accent rounded-full"></div>
                     <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
@@ -119,31 +118,39 @@ export default function Hero() {
                   </div>
                 </div>
                 
-                {/* Stats Cards */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-accent/10 p-4 rounded-xl">
-                    <div className="text-2xl font-bold text-accent">+47%</div>
-                    <div className="text-sm text-gray-600">Team Productivity</div>
+                {/* Four Service Cards */}
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="bg-accent/10 p-3 rounded-xl">
+                    <div className="text-sm font-bold text-accent">AI Chatbot</div>
+                    <div className="text-xs text-gray-600">Live Chat + Support</div>
                   </div>
-                  <div className="bg-primary/10 p-4 rounded-xl">
-                    <div className="text-2xl font-bold text-primary">92%</div>
-                    <div className="text-sm text-gray-600">Job Satisfaction</div>
+                  <div className="bg-primary/10 p-3 rounded-xl">
+                    <div className="text-sm font-bold text-primary">Content AI</div>
+                    <div className="text-xs text-gray-600">Blogs + Marketing</div>
+                  </div>
+                  <div className="bg-green-500/10 p-3 rounded-xl">
+                    <div className="text-sm font-bold text-green-600">CRM AI</div>
+                    <div className="text-xs text-gray-600">Sales + Leads</div>
+                  </div>
+                  <div className="bg-purple-500/10 p-3 rounded-xl">
+                    <div className="text-sm font-bold text-purple-600">Transcription</div>
+                    <div className="text-xs text-gray-600">Meetings + Admin</div>
                   </div>
                 </div>
 
-                {/* Activity Feed */}
+                {/* Quick Stats */}
                 <div className="space-y-3">
-                  <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                    <div className="w-2 h-2 bg-accent rounded-full"></div>
-                    <span className="text-sm text-gray-700">Sarah automated invoice processing</span>
+                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                    <span className="text-sm text-gray-700">Installation Time</span>
+                    <span className="text-sm font-bold text-accent">15 mins</span>
                   </div>
-                  <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    <span className="text-sm text-gray-700">Mike hit 120% of monthly target</span>
+                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                    <span className="text-sm text-gray-700">Weekly Time Saved</span>
+                    <span className="text-sm font-bold text-primary">10+ hours</span>
                   </div>
-                  <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                    <div className="w-2 h-2 bg-accent rounded-full"></div>
-                    <span className="text-sm text-gray-700">Team saved 18 hours this week</span>
+                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                    <span className="text-sm text-gray-700">ROI Timeline</span>
+                    <span className="text-sm font-bold text-green-600">1 week</span>
                   </div>
                 </div>
               </div>
@@ -152,12 +159,12 @@ export default function Hero() {
               <div className="absolute -top-4 -right-4 bg-white p-3 rounded-xl shadow-lg">
                 <div className="flex items-center space-x-2">
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="text-sm font-medium">Team Happy</span>
+                  <span className="text-sm font-medium">UK-Based</span>
                 </div>
               </div>
               
               <div className="absolute -bottom-4 -left-4 bg-accent text-white p-3 rounded-xl shadow-lg">
-                <div className="text-sm font-medium">£3,200 extra earned this month</div>
+                <div className="text-sm font-medium">GDPR Compliant</div>
               </div>
             </div>
           </div>

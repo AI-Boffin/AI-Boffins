@@ -56,7 +56,7 @@ export default function Contact() {
         {/* Header */}
         <div className="text-center space-y-6 mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium">
-            Ready to Empower Your Team? Let's Chat.
+            Ready to Install Your First AI Tool? Let's Chat.
           </div>
           
           <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-gray-900">
@@ -66,8 +66,8 @@ export default function Contact() {
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Book a consultation or send us a message. We'll show you exactly how AI 
-            can help your team achieve more and enjoy their work.
+            Book a consultation or send us a message. We'll show you exactly which of our four AI services 
+            will give your team the biggest productivity boost in the shortest time.
           </p>
         </div>
 
@@ -252,7 +252,7 @@ export default function Contact() {
 
                     <div>
                       <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
-                        Which area would help your team most?
+                        Which AI service interests you most?
                       </label>
                       <select
                         id="service"
@@ -261,26 +261,26 @@ export default function Contact() {
                         onChange={handleInputChange}
                         className="w-full h-12 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                       >
-                        <option value="">Select an area</option>
-                        <option value="eliminate-boring-tasks">Eliminate Boring Tasks</option>
-                        <option value="boost-performance">Boost Team Performance</option>
-                        <option value="enhance-collaboration">Enhance Team Collaboration</option>
-                        <option value="accelerate-growth">Accelerate Growth</option>
-                        <option value="custom">Custom Solution</option>
+                        <option value="">Select a service</option>
+                        <option value="ai-chatbot">AI Chatbot + Live Chat Support</option>
+                        <option value="content-generation">Automated Content Generation & Marketing</option>
+                        <option value="crm-sales-ai">AI-Enhanced CRM & Sales Workflow</option>
+                        <option value="transcription-admin">AI Transcription & Admin Automation</option>
+                        <option value="bundle">All Four Services (Bundle)</option>
                         <option value="consultation">Just want a consultation</option>
                       </select>
                     </div>
 
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                        Tell us about your team's challenges *
+                        Tell us about your team's challenges * 
                       </label>
                       <Textarea
                         id="message"
                         name="message"
                         value={formData.message}
                         onChange={handleInputChange}
-                        placeholder="What repetitive tasks frustrate your team? What would they rather be doing? How many team members do you have? What are their main pain points?"
+                        placeholder="What repetitive tasks frustrate your team? How many team members do you have? What's your biggest productivity pain point? What would you like to achieve in the next 30 days?"
                         required
                         className="min-h-[120px]"
                       />
@@ -291,7 +291,7 @@ export default function Contact() {
                         <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
                         <div className="text-sm text-gray-600">
                           <strong>What happens next?</strong> We'll review your team's challenges and send you a 
-                          custom AI empowerment plan within 24 hours, including potential productivity gains and implementation timeline.
+                          custom AI implementation plan within 24 hours, including which service to start with, potential time savings, and installation timeline.
                         </div>
                       </div>
                     </div>
@@ -317,7 +317,7 @@ export default function Contact() {
 
                     <p className="text-xs text-gray-500 text-center">
                       By submitting this form, you agree to our privacy policy. We'll never share your information 
-                      and you can unsubscribe at any time.
+                      and you can unsubscribe at any time. All data is stored securely in the UK.
                     </p>
                   </form>
                 )}

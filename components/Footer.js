@@ -32,8 +32,8 @@ export default function Footer() {
             </div>
             
             <p className="text-white/90 leading-relaxed">
-              AI solutions that empower UK teams. Eliminate boring tasks, boost productivity, 
-              and help your people achieve more with our GDPR-compliant AI systems.
+              Four proven AI services that UK SMEs can install quickly and scale easily. 
+              No overwhelm, just high-impact solutions that deliver ROI within a week.
             </p>
 
             {/* Trust Badges */}
@@ -110,14 +110,14 @@ export default function Footer() {
           {/* Services */}
           <div>
             <h3 className="font-montserrat font-semibold text-lg mb-6 text-white">
-              Team Empowerment
+              Our Four AI Services
             </h3>
             <ul className="space-y-3">
-              <li className="text-white/80 text-sm">Eliminate Boring Tasks</li>
-              <li className="text-white/80 text-sm">Boost Team Performance</li>
-              <li className="text-white/80 text-sm">Enhance Collaboration</li>
-              <li className="text-white/80 text-sm">Accelerate Growth</li>
-              <li className="text-white/80 text-sm">Custom Team Solutions</li>
+              <li className="text-white/80 text-sm">AI Chatbot + Live Chat</li>
+              <li className="text-white/80 text-sm">Content Generation & Marketing</li>
+              <li className="text-white/80 text-sm">CRM & Sales AI</li>
+              <li className="text-white/80 text-sm">Transcription & Admin</li>
+              <li className="text-white/80 text-sm">Full Service Bundle</li>
               <li>
                 <button 
                   onClick={() => scrollToSection('contact')}
@@ -139,10 +139,10 @@ export default function Footer() {
                 <Phone className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
                 <div>
                   <a 
-                    href="tel:01234567890"
+                    href="tel:01908410917"
                     className="text-white/90 hover:text-accent transition-colors text-sm"
                   >
-                    01234 567890
+                    01908 410917
                   </a>
                   <p className="text-white/60 text-xs">Mon-Fri, 9am-6pm GMT</p>
                 </div>
