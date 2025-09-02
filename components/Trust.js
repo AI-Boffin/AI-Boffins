@@ -45,7 +45,7 @@ export default function Trust() {
   }, []);
 
   return (
-    <section className="py-20 bg-gradient-to-b from-secondary/30 to-white">
+    <section id="trust" className="py-20 bg-gradient-to-b from-secondary/30 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center space-y-6 mb-16">

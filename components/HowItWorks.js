@@ -71,6 +71,13 @@ export default function HowItWorks() {
   const [visibleSteps, setVisibleSteps] = useState([]);
   const stepRefs = useRef([]);
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   useEffect(() => {
     const observers = stepRefs.current.map((ref, index) => {
       if (!ref) return null;
@@ -286,7 +293,7 @@ export default function HowItWorks() {
             Ready to empower your team? Let's start with a free assessment.
           </div>
           <button 
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => scrollToSection('contact')}
             className="bg-gradient-to-r from-primary to-accent text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105"
           >
             Book Your Free Team Assessment

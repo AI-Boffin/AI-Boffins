@@ -120,22 +120,34 @@ export default function Hero() {
                 
                 {/* Four Service Cards */}
                 <div className="grid grid-cols-2 gap-3">
-                  <div className="bg-accent/10 p-3 rounded-xl">
+                  <button 
+                    onClick={() => scrollToSection('solutions')}
+                    className="bg-accent/10 p-3 rounded-xl hover:bg-accent/20 transition-colors cursor-pointer"
+                  >
                     <div className="text-sm font-bold text-accent">AI Chatbot</div>
                     <div className="text-xs text-gray-600">Live Chat + Support</div>
-                  </div>
-                  <div className="bg-primary/10 p-3 rounded-xl">
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('solutions')}
+                    className="bg-primary/10 p-3 rounded-xl hover:bg-primary/20 transition-colors cursor-pointer"
+                  >
                     <div className="text-sm font-bold text-primary">Content AI</div>
                     <div className="text-xs text-gray-600">Blogs + Marketing</div>
-                  </div>
-                  <div className="bg-green-500/10 p-3 rounded-xl">
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('solutions')}
+                    className="bg-green-500/10 p-3 rounded-xl hover:bg-green-500/20 transition-colors cursor-pointer"
+                  >
                     <div className="text-sm font-bold text-green-600">CRM AI</div>
                     <div className="text-xs text-gray-600">Sales + Leads</div>
-                  </div>
-                  <div className="bg-purple-500/10 p-3 rounded-xl">
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('solutions')}
+                    className="bg-purple-500/10 p-3 rounded-xl hover:bg-purple-500/20 transition-colors cursor-pointer"
+                  >
                     <div className="text-sm font-bold text-purple-600">Transcription</div>
                     <div className="text-xs text-gray-600">Meetings + Admin</div>
-                  </div>
+                  </button>
                 </div>
 
                 {/* Quick Stats */}

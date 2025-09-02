@@ -77,6 +77,13 @@ export default function CaseStudies() {
   const [visibleElements, setVisibleElements] = useState([]);
   const elementRefs = useRef([]);
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   useEffect(() => {
     const observers = elementRefs.current.map((ref, index) => {
       if (!ref) return null;
@@ -270,7 +277,7 @@ export default function CaseStudies() {
               Let's show you which service will give you the biggest productivity boost.
             </p>
             <Button 
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => scrollToSection('contact')}
               size="lg"
               className="bg-accent hover:bg-accent/90 text-white px-8 py-4 h-auto font-semibold group"
             >

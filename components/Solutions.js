@@ -100,6 +100,13 @@ export default function Solutions() {
   const [expandedCard, setExpandedCard] = useState(null);
   const cardRefs = useRef([]);
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   useEffect(() => {
     const observers = cardRefs.current.map((ref, index) => {
       if (!ref) return null;
@@ -286,7 +293,7 @@ export default function Solutions() {
               Let's show you how to get started with one of these services in under an hour.
             </p>
             <button 
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => scrollToSection('contact')}
               className="bg-white text-primary px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105"
             >
               Book Free Team Assessment

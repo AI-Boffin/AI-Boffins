@@ -113,6 +113,13 @@ export default function Pricing() {
   const [selectedService, setSelectedService] = useState(0);
   const cardRefs = useRef([]);
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   useEffect(() => {
     const observers = cardRefs.current.map((ref, index) => {
       if (!ref) return null;
@@ -233,7 +240,7 @@ export default function Pricing() {
 
                       {/* CTA Button */}
                       <Button 
-                        onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                        onClick={() => scrollToSection('contact')}
                         className="w-full bg-gray-800 hover:bg-gray-900 text-white font-semibold py-3 h-auto group transition-all duration-300"
                       >
                         Get Started
@@ -301,7 +308,7 @@ export default function Pricing() {
 
                       {/* CTA Button */}
                       <Button 
-                        onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                        onClick={() => scrollToSection('contact')}
                         className="w-full bg-accent hover:bg-accent/90 text-white font-semibold py-3 h-auto group transition-all duration-300"
                       >
                         Go Pro
@@ -327,7 +334,7 @@ export default function Pricing() {
             <div className="text-4xl font-bold mb-4">£199/month</div>
             <p className="text-sm opacity-90 mb-6">Setup: £1,499 | Install: 2-3 hours</p>
             <Button 
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => scrollToSection('contact')}
               size="lg"
               className="bg-white text-primary px-8 py-4 h-auto font-semibold hover:shadow-lg transition-all duration-300"
             >
@@ -347,7 +354,7 @@ export default function Pricing() {
               based on your team's biggest pain points.
             </p>
             <Button 
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => scrollToSection('contact')}
               size="lg"
               className="bg-primary hover:bg-primary/90 text-white px-8 py-4 h-auto font-semibold"
             >

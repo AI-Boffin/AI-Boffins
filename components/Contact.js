@@ -85,7 +85,7 @@ export default function Contact() {
               <CardContent>
                 <p className="text-gray-600 mb-2">Speak to our team empowerment experts</p>
                 <a 
-                  href="tel:01234567890"
+                  href="tel:01908410917"
                   className="text-xl font-semibold text-primary hover:text-accent transition-colors"
                 >
                   01908 410917

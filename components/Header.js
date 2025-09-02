@@ -17,11 +17,42 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Handle hash navigation when component mounts
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
+    const handleHashNavigation = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const sectionId = hash.substring(1);
+        const element = document.getElementById(sectionId);
+        if (element) {
+          setTimeout(() => {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }, 100);
+        }
+      }
+    };
+
+    handleHashNavigation();
+  }, []);
+
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMenuOpen(false);
+    // Check if we're on the main page or a legal page
+    const isMainPage = typeof window !== 'undefined' && window.location.pathname === '/';
+    
+    if (isMainPage) {
+      // On main page, scroll to section
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        setIsMenuOpen(false);
+      }
+    } else {
+      // On legal pages, navigate to main page and then scroll
+      if (typeof window !== 'undefined') {
+        window.location.href = `/#${sectionId}`;
+      }
     }
   };
 
@@ -33,11 +64,15 @@ export default function Header() {
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">
               <Phone className="h-4 w-4" />
-              <span>Call us: 01908 410917</span>
+              <a href="tel:01908410917" className="hover:text-accent transition-colors">
+                <span>Call us: 01908 410917</span>
+              </a>
             </div>
             <div className="flex items-center space-x-2">
               <Mail className="h-4 w-4" />
-              <span>info@aiboffins.co.uk</span>
+              <a href="mailto:info@aiboffins.co.uk" className="hover:text-accent transition-colors">
+                <span>info@aiboffins.co.uk</span>
+              </a>
             </div>
           </div>
           <div className="hidden md:block">
@@ -58,11 +93,15 @@ export default function Header() {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
-              <svg 
-                className="h-14 w-auto cursor-pointer"
-                viewBox="0 0 400 150" 
-                xmlns="http://www.w3.org/2000/svg"
+              <button 
+                onClick={() => scrollToSection('home')}
+                className="cursor-pointer"
               >
+                <svg 
+                  className="h-14 w-auto"
+                  viewBox="0 0 400 150" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                 {/* White circular background */}
                 <circle cx="200" cy="75" r="90" fill="#ffffff" />
                 
@@ -108,6 +147,7 @@ export default function Header() {
                   `}
                 </style>
               </svg>
+              </button>
               <div className="ml-2 text-xs text-muted-foreground hidden sm:block">
                 by IT Boffins
               </div>
@@ -145,6 +185,25 @@ export default function Header() {
               >
                 Contact
               </button>
+              <div className="relative group">
+                <button className="text-gray-700 hover:text-primary transition-colors font-medium">
+                  Legal
+                </button>
+                <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <a href="/privacy" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary">
+                    Privacy Policy
+                  </a>
+                  <a href="/terms" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary">
+                    Terms of Service
+                  </a>
+                  <a href="/cookies" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary">
+                    Cookie Policy
+                  </a>
+                  <a href="/gdpr" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary">
+                    GDPR
+                  </a>
+                </div>
+              </div>
             </nav>
 
             {/* CTA Button */}
@@ -207,6 +266,21 @@ export default function Header() {
               >
                 Contact
               </button>
+              <div className="border-t border-gray-200 pt-4">
+                <div className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-2">Legal</div>
+                <a href="/privacy" className="block text-gray-700 hover:text-primary transition-colors font-medium py-2">
+                  Privacy Policy
+                </a>
+                <a href="/terms" className="block text-gray-700 hover:text-primary transition-colors font-medium py-2">
+                  Terms of Service
+                </a>
+                <a href="/cookies" className="block text-gray-700 hover:text-primary transition-colors font-medium py-2">
+                  Cookie Policy
+                </a>
+                <a href="/gdpr" className="block text-gray-700 hover:text-primary transition-colors font-medium py-2">
+                  GDPR
+                </a>
+              </div>
               <Button 
                 onClick={() => scrollToSection('contact')}
                 className="w-full bg-accent hover:bg-accent/90 text-white font-medium mt-4"

@@ -23,9 +23,14 @@ export default function Footer() {
           {/* Company Info */}
           <div className="space-y-6">
             <div>
-              <div className="font-montserrat font-bold text-2xl mb-2">
-                AI <span className="text-accent">Boffins</span>
-              </div>
+              <button 
+                onClick={() => scrollToSection('home')}
+                className="cursor-pointer"
+              >
+                <div className="font-montserrat font-bold text-2xl mb-2">
+                  AI <span className="text-accent">Boffins</span>
+                </div>
+              </button>
               <p className="text-white/80 text-sm">
                 Sister company to IT Boffins
               </p>
@@ -175,23 +180,29 @@ export default function Footer() {
               <p className="text-white/80 text-sm mb-3">Follow us:</p>
               <div className="flex space-x-3">
                 <a 
-                  href="#" 
+                  href="https://linkedin.com/company/aiboffins" 
                   className="bg-white/10 hover:bg-accent p-2 rounded-full transition-colors"
                   aria-label="LinkedIn"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Linkedin className="h-4 w-4" />
                 </a>
                 <a 
-                  href="#" 
+                  href="https://twitter.com/aiboffins" 
                   className="bg-white/10 hover:bg-accent p-2 rounded-full transition-colors"
                   aria-label="Twitter"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Twitter className="h-4 w-4" />
                 </a>
                 <a 
-                  href="#" 
+                  href="https://facebook.com/aiboffins" 
                   className="bg-white/10 hover:bg-accent p-2 rounded-full transition-colors"
                   aria-label="Facebook"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Facebook className="h-4 w-4" />
                 </a>
@@ -208,9 +219,10 @@ export default function Footer() {
             <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-sm text-white/70">
               <p>&copy; {new Date().getFullYear()} AI Boffins. All rights reserved.</p>
               <div className="flex space-x-4">
-                <a href="#" className="hover:text-accent transition-colors">Privacy Policy</a>
-                <a href="#" className="hover:text-accent transition-colors">Terms of Service</a>
-                <a href="#" className="hover:text-accent transition-colors">GDPR</a>
+                <a href="/privacy" className="hover:text-accent transition-colors">Privacy Policy</a>
+                <a href="/terms" className="hover:text-accent transition-colors">Terms of Service</a>
+                <a href="/cookies" className="hover:text-accent transition-colors">Cookie Policy</a>
+                <a href="/gdpr" className="hover:text-accent transition-colors">GDPR</a>
               </div>
             </div>
             
