@@ -193,7 +193,7 @@ export default function PrivacyPolicy() {
               <p className="text-gray-700 leading-relaxed">
                 To exercise these rights, please contact us at{' '}
                 <a href="mailto:privacy@aiboffins.co.uk" className="text-accent hover:text-accent/80">
-                  privacy@aiboffins.co.uk
+                  info@aiboffins.co.uk
                 </a>
               </p>
             </div>
@@ -268,7 +268,7 @@ export default function PrivacyPolicy() {
                 </p>
                 <p className="text-gray-700 mb-2">
                   Email: <a href="mailto:privacy@aiboffins.co.uk" className="text-accent hover:text-accent/80">
-                    privacy@aiboffins.co.uk
+                    info@aiboffins.co.uk
                   </a>
                 </p>
                 <p className="text-gray-700 mb-2">

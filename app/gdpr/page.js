@@ -64,7 +64,7 @@ export default function GDPRCompliance() {
                 </p>
                 <p className="text-gray-700 mb-2">
                   <strong>Email:</strong> <a href="mailto:privacy@aiboffins.co.uk" className="text-accent hover:text-accent/80">
-                    privacy@aiboffins.co.uk
+                    info@aiboffins.co.uk
                   </a>
                 </p>
                 <p className="text-gray-700 mb-2">
@@ -224,7 +224,7 @@ export default function GDPRCompliance() {
                 </h3>
                 <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4">
                   <li><strong>Email:</strong> <a href="mailto:privacy@aiboffins.co.uk" className="text-accent hover:text-accent/80">
-                    privacy@aiboffins.co.uk
+                    info@aiboffins.co.uk
                   </a></li>
                   <li><strong>Phone:</strong> <a href="tel:01908410917" className="text-accent hover:text-accent/80">
                     01908 410917
@@ -319,7 +319,7 @@ export default function GDPRCompliance() {
                 </p>
                 <p className="text-gray-700 mb-2">
                   <strong>Email:</strong> <a href="mailto:privacy@aiboffins.co.uk" className="text-accent hover:text-accent/80">
-                    privacy@aiboffins.co.uk
+                    info@aiboffins.co.uk
                   </a>
                 </p>
                 <p className="text-gray-700">
@@ -386,7 +386,7 @@ export default function GDPRCompliance() {
                 </p>
                 <p className="text-gray-700 mb-2">
                   <strong>GDPR Email:</strong> <a href="mailto:privacy@aiboffins.co.uk" className="text-accent hover:text-accent/80">
-                    privacy@aiboffins.co.uk
+                    info@aiboffins.co.uk
                   </a>
                 </p>
                 <p className="text-gray-700 mb-2">

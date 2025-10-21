@@ -11,13 +11,13 @@ const caseStudies = [
     location: 'Manchester',
     industry: 'Online Retail',
     challenge: 'Customer support team overwhelmed with 200+ daily queries, 80% were repetitive FAQs',
-    solution: 'AI Chatbot + Live Chat Support that handles 70% of queries automatically',
+    solution: 'AI Chatbot + Live Chat Support could handle 70% of queries automatically',
     results: {
       timeSaved: '15 hours/week',
       responseTime: '90% faster',
       customerSatisfaction: '+45%'
     },
-    quote: "Our support team was drowning in repetitive questions. Now the AI chatbot handles the basics while our team focuses on complex issues. Sarah, our support lead, says she finally has time to provide excellent service.",
+    quote: "Imagine your support team no longer drowning in repetitive questions. An AI chatbot could handle the basics while your team focuses on complex issues. Your support lead could finally have time to provide excellent service.",
     icon: Users,
     color: 'from-blue-500 to-primary',
     service: 'AI Chatbot + Live Chat'
@@ -27,13 +27,13 @@ const caseStudies = [
     location: 'Birmingham',
     industry: 'Digital Marketing',
     challenge: 'Content team spending 25 hours/week on blog posts and social media content',
-    solution: 'Automated Content Generation & Marketing that produces 80% of routine content',
+    solution: 'Automated Content Generation & Marketing could produce 80% of routine content',
     results: {
       timeSaved: '20 hours/week',
       contentOutput: '+300%',
       teamProductivity: '+60%'
     },
-    quote: "Our content team was stuck in a rut of repetitive writing. Now AI generates the first draft and our team adds creativity and strategy. Mike, our content director, says they're producing 3x more content with better quality.",
+    quote: "Picture your content team breaking free from repetitive writing. AI could generate the first draft while your team adds creativity and strategy. You could be producing 3x more content with better quality.",
     icon: Target,
     color: 'from-accent to-green-600',
     service: 'Content Generation & Marketing'
@@ -49,7 +49,7 @@ const caseStudies = [
       followUpTime: '90% faster',
       salesRevenue: '+35%'
     },
-    quote: "Our sales team was missing opportunities because they couldn't follow up fast enough. Now AI prioritizes leads and sends personalized follow-ups automatically. The whole team is hitting targets they never thought possible.",
+    quote: "Envision your sales team never missing opportunities again. AI could prioritize leads and send personalized follow-ups automatically. Your whole team could be hitting targets they never thought possible.",
     icon: Smile,
     color: 'from-purple-500 to-primary',
     service: 'CRM & Sales AI'
@@ -59,13 +59,45 @@ const caseStudies = [
     location: 'Edinburgh',
     industry: 'Legal Services',
     challenge: 'Paralegals spending 30+ hours/week on document transcription and admin tasks',
-    solution: 'AI Transcription & Admin Automation that handles 85% of routine document processing',
+    solution: 'AI Transcription & Admin Automation could handle 85% of routine document processing',
     results: {
       timeSaved: '25 hours/week',
       accuracy: '99.5%',
       clientTurnaround: '+50% faster'
     },
-    quote: "Our paralegals were stuck doing mind-numbing transcription work. Now AI handles the routine stuff and they focus on legal research and client service. The whole practice is more efficient and our clients love the faster turnaround.",
+    quote: "Consider your paralegals freed from mind-numbing transcription work. AI could handle the routine stuff while they focus on legal research and client service. Your whole practice could be more efficient with faster client turnaround.",
+    icon: Clock,
+    color: 'from-orange-500 to-accent',
+    service: 'Transcription & Admin AI'
+  },
+  {
+    company: 'Electrical Contractor',
+    location: 'Bristol',
+    industry: 'Electrical Services',
+    challenge: 'Field teams spending 2+ hours daily on admin tasks, scheduling, and customer follow-ups',
+    solution: 'AI Chatbot + CRM could automate scheduling, quotes, and customer communications',
+    results: {
+      timeSaved: '10 hours/week',
+      jobBooking: '+60%',
+      customerResponse: 'Instant'
+    },
+    quote: "Think about your field teams focusing purely on electrical work instead of admin. An AI chatbot could handle customer inquiries and booking while your CRM automatically follows up on quotes. You could book more jobs with instant customer responses.",
+    icon: Users,
+    color: 'from-blue-500 to-primary',
+    service: 'AI Chatbot + CRM'
+  },
+  {
+    company: 'Artisan Bakery',
+    location: 'York',
+    industry: 'Food Production',
+    challenge: 'Daily stock management taking 3+ hours, frequent ingredient shortages affecting production',
+    solution: 'AI-powered inventory tracking with automated restocking alerts and supplier ordering',
+    results: {
+      timeSaved: '12 hours/week',
+      wasteReduction: '-40%',
+      stockAccuracy: '99%'
+    },
+    quote: "Imagine never running out of flour or yeast again. AI could track your ingredient levels, predict usage patterns, and automatically alert suppliers when restocking is needed. You could reduce waste by 40% while ensuring perfect stock accuracy.",
     icon: Clock,
     color: 'from-orange-500 to-accent',
     service: 'Transcription & Admin AI'
@@ -125,13 +157,13 @@ export default function CaseStudies() {
           </div>
           
           <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-gray-900">
-            Real teams achieving{' '}
-            <span className="text-primary">real results</span>
+            Here are ways our{' '}
+            <span className="text-primary">AI services can support</span> your business
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover how UK teams are using our four core AI services to eliminate repetitive tasks, 
-            boost productivity, and actually enjoy their work.
+            Discover how our four core AI services can help eliminate repetitive tasks, 
+            boost productivity, and transform how your team works.
           </p>
         </div>
 
@@ -270,11 +302,11 @@ export default function CaseStudies() {
         >
           <div className="bg-gradient-to-r from-secondary to-white p-8 rounded-3xl border border-gray-100">
             <h3 className="text-2xl font-montserrat font-bold text-gray-900 mb-4">
-              Ready to see similar results for your team?
+              Ready to explore how AI could transform your team?
             </h3>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Join UK teams already saving 15+ hours per week with our four proven AI services. 
-              Let's show you which service will give you the biggest productivity boost.
+              Discover how our four AI services could help your team save 15+ hours per week. 
+              Let's show you which service could give you the biggest productivity boost.
             </p>
             <Button 
               onClick={() => scrollToSection('contact')}

@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Phone, Mail, MapPin, Calendar, Send, CheckCircle, Users } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, CheckCircle, Users } from 'lucide-react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -129,32 +129,6 @@ export default function Contact() {
               </CardContent>
             </Card>
 
-            {/* Calendly Integration */}
-            <Card className="bg-gradient-to-br from-primary to-accent text-white shadow-xl border-0">
-              <CardHeader>
-                <CardTitle className="flex items-center text-lg font-montserrat">
-                  <Calendar className="h-5 w-5 mr-3" />
-                  Book a Call
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-white/90 mb-4">
-                  Schedule a free 30-minute consultation to discuss how AI can empower your team.
-                </p>
-                <Button 
-                  className="w-full bg-white text-primary hover:bg-gray-100 font-semibold"
-                  onClick={() => {
-                    // In a real implementation, this would open Calendly
-                    window.open('https://calendly.com/aiboffins', '_blank');
-                  }}
-                >
-                  Schedule Free Team Assessment
-                </Button>
-                <p className="text-white/70 text-sm mt-3 text-center">
-                  No commitment • Free expert advice
-                </p>
-              </CardContent>
-            </Card>
           </div>
 
           {/* Contact Form */}
