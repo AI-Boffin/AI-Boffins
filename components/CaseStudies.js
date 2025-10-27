@@ -106,7 +106,7 @@ const caseStudies = [
 
 export default function CaseStudies() {
   const [activeCase, setActiveCase] = useState(0);
-  const [visibleElements, setVisibleElements] = useState([]);
+  const [visibleElements, setVisibleElements] = useState(new Array(caseStudies.length + 1).fill(true).map((_, i) => i));
   const elementRefs = useRef([]);
 
   const scrollToSection = (sectionId) => {
@@ -123,10 +123,15 @@ export default function CaseStudies() {
       const observer = new IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
-            setVisibleElements(prev => [...new Set([...prev, index])]);
+            setVisibleElements(prev => {
+              if (!prev.includes(index)) {
+                return [...prev, index];
+              }
+              return prev;
+            });
           }
         },
-        { threshold: 0.1 }
+        { threshold: 0.05, rootMargin: '50px' }
       );
       
       observer.observe(ref);
@@ -233,7 +238,7 @@ export default function CaseStudies() {
         </div>
 
         {/* Additional Case Studies Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {caseStudies.map((caseStudy, index) => {
             const Icon = caseStudy.icon;
             const isVisible = visibleElements.includes(index + 1);
@@ -242,12 +247,11 @@ export default function CaseStudies() {
               <div
                 key={index}
                 ref={el => elementRefs.current[index + 1] = el}
-                className={`transform transition-all duration-700 ${
+                className={`transform transition-all duration-500 ${
                   isVisible 
                     ? 'translate-y-0 opacity-100' 
-                    : 'translate-y-8 opacity-0'
+                    : 'translate-y-4 opacity-0'
                 }`}
-                style={{ transitionDelay: `${index * 150}ms` }}
               >
                 <Card className="h-full hover:shadow-xl transition-all duration-300 border-0 shadow-lg group hover:-translate-y-2">
                   <CardContent className="p-6">

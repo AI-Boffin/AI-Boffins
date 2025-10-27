@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Phone, Mail, MapPin, Send, CheckCircle, Users } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -31,10 +32,40 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // EmailJS configuration - Direct values for now (secure to expose in client)
+      const serviceId = 'service_p5sojk8';
+      const templateId = 'template_mk77o7v';
+      const publicKey = '9kVunWNyXihFri4Qj';
+      
+      console.log('EmailJS Config loaded');
+      
+      if (!serviceId || !templateId || !publicKey) {
+        console.error('EmailJS environment variables are not set');
+        alert('Email service is not configured. Please contact us directly at info@aiboffins.co.uk');
+        setIsSubmitting(false);
+        return;
+      }
+      
+      // Prepare template parameters
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        company: formData.company,
+        phone: formData.phone,
+        service: formData.service,
+        message: formData.message,
+        to_email: 'info@aiboffins.co.uk'
+      };
+      
+      // Send email using EmailJS (newer API version)
+      await emailjs.send(serviceId, templateId, templateParams, {
+        publicKey: publicKey
+      });
+      
       setIsSubmitting(false);
       setIsSubmitted(true);
+      
       // Reset form after success
       setTimeout(() => {
         setIsSubmitted(false);
@@ -47,7 +78,16 @@ export default function Contact() {
           service: ''
         });
       }, 3000);
-    }, 1500);
+      
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      console.error('Error details:', error.text || error.message || error);
+      setIsSubmitting(false);
+      
+      // Show more detailed error message to help debug
+      const errorMsg = error.text || error.message || 'Unknown error';
+      alert(`Failed to send message: ${errorMsg}. Please contact us directly at info@aiboffins.co.uk`);
+    }
   };
 
   return (

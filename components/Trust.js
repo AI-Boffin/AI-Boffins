@@ -172,7 +172,7 @@ export default function Trust() {
                       <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                     ))}
                   </div>
-                  <p className="text-sm text-gray-500">Rated 5/5 by 50+ UK SMEs</p>
+                  <p className="text-sm text-gray-500">Rated 5/5 by UK SMEs</p>
                 </div>
               </div>
               
