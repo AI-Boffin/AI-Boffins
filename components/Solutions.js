@@ -2,96 +2,96 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { MessageSquare, FileText, Workflow, Target, ArrowRight, Users, TrendingUp, Clock, Zap, Bot, BarChart3, Mic } from 'lucide-react';
+import { ArrowRight, BarChart3, Bot, Clock, FileText, GraduationCap, ShieldCheck, Target, TrendingUp, Users, Zap } from 'lucide-react';
 
 const solutions = [
   {
     icon: Bot,
-    title: 'AI Chatbot + Live Chat Support',
-    description: 'Automates FAQs and basic support with a ChatGPT-powered bot effortlessly trained on your site content.',
-    installTime: '15 mins',
-    timeSaved: 'Save 10+ hrs/week',
+    title: 'Customer Enquiry Assistant',
+    description: 'AI-assisted web chat, email triage, booking prompts, quote capture and live handoff for busy UK SMEs.',
+    installTime: '1-2 days',
+    timeSaved: 'Reduce missed enquiries',
     features: [
-      'GDPR-compliant UK hosting',
-      'ChatGPT-powered responses',
-      'Easy content training',
-      'Live chat handoff',
-      'Lead capture automation'
+      'Website FAQ and enquiry assistant',
+      'Lead capture and booking prompts',
+      'Email or CRM notification workflow',
+      'Human handoff for complex queries',
+      'GDPR-aware setup and data guidance'
     ],
     upgradeOptions: [
-      'Add more chat volume',
-      'Custom integrations',
-      'Advanced analytics',
-      'Multi-language support'
+      'WhatsApp or Facebook integration',
+      'Custom quote forms',
+      'Conversation review reports',
+      'More pages and knowledge sources'
     ],
     color: 'from-blue-500 to-primary',
-    price: 'From £39/mo'
-  },
-  {
-    icon: FileText,
-    title: 'Automated Content Generation & Marketing',
-    description: 'AI-powered tools that generate blog posts, social media content, email drafts, and marketing copy.',
-    installTime: '30 mins',
-    timeSaved: 'Save 8+ hrs/week',
-    features: [
-      'Blog post generation',
-      'Social media content',
-      'Email marketing drafts',
-      'SEO optimization',
-      'Brand voice consistency'
-    ],
-    upgradeOptions: [
-      'Scheduled content packs',
-      'Custom templates',
-      'Design assets',
-      'Content strategy planning'
-    ],
-    color: 'from-accent to-green-600',
-    price: 'From £49/mo'
+    price: 'From £59/mo'
   },
   {
     icon: BarChart3,
-    title: 'AI-Enhanced CRM & Sales Workflow',
-    description: 'AI enhancements to CRM systems for lead scoring, sales forecasting, and outreach automation.',
-    installTime: '1 hour',
-    timeSaved: 'Boost conversions 25%',
+    title: 'Lead & Quote Follow-Up',
+    description: 'Simple automations that stop leads, quotes and sales follow-ups slipping through the cracks.',
+    installTime: '2-5 days',
+    timeSaved: 'Win back warm leads',
     features: [
-      'Smart lead scoring',
-      'Sales forecasting',
-      'Automated follow-ups',
-      'Pipeline optimization',
-      'Performance insights'
+      'Missed lead alerts',
+      'Quote chaser sequences',
+      'CRM tidy-up and pipeline stages',
+      'AI-assisted follow-up drafts',
+      'Weekly sales activity summary'
     ],
     upgradeOptions: [
-      'Custom CRM pipelines',
-      'Advanced analytics',
-      'Team training',
-      'Integration support'
+      'CRM integrations',
+      'Custom sales dashboards',
+      'Proposal and email templates',
+      'Team coaching'
     ],
-    color: 'from-purple-500 to-primary',
+    color: 'from-accent to-green-600',
     price: 'From £79/mo'
   },
   {
-    icon: Mic,
-    title: 'AI Transcription & Admin Automation',
-    description: 'Tools to transcribe meetings, extract insights from audio/video, and automate admin processes.',
-    installTime: '45 mins',
-    timeSaved: 'Save 6+ hrs/week',
+    icon: FileText,
+    title: 'Admin & Document Assistant',
+    description: 'Practical AI workflows for meeting notes, action lists, document summaries, forms and repetitive admin.',
+    installTime: '2-5 days',
+    timeSaved: 'Save admin hours',
     features: [
-      'Meeting transcription',
-      'Audio/video insights',
-      'Admin process automation',
-      'Document processing',
-      'Multi-language support'
+      'Meeting notes and action summaries',
+      'Document and email summarisation',
+      'Form and spreadsheet workflows',
+      'Invoice or paperwork extraction',
+      'Reusable prompt and template library'
     ],
     upgradeOptions: [
-      'Multi-language transcription',
-      'Custom workflows',
-      'API integrations',
-      'Advanced analytics'
+      'Microsoft 365 or Google Workspace setup',
+      'Custom automation workflows',
+      'Approval steps and audit trails',
+      'Department-specific templates'
+    ],
+    color: 'from-purple-500 to-primary',
+    price: 'From £69/mo'
+  },
+  {
+    icon: GraduationCap,
+    title: 'AI Consultancy & Crash Course',
+    description: 'A practical AI crash course and consultancy session that shows your team what to use, what to avoid and where to start.',
+    installTime: 'Half day',
+    timeSaved: 'Build team confidence',
+    features: [
+      'AI readiness review',
+      'Hands-on ChatGPT and Copilot training',
+      'Safe-use and data protection basics',
+      'Prompting for real business tasks',
+      '30-day action plan'
+    ],
+    upgradeOptions: [
+      'Leadership consultancy',
+      'Department workshops',
+      'Custom training materials',
+      'Monthly AI office hours'
     ],
     color: 'from-orange-500 to-accent',
-    price: 'From £59/mo'
+    price: 'From £360'
   }
 ];
 
@@ -110,7 +110,7 @@ export default function Solutions() {
   useEffect(() => {
     const observers = cardRefs.current.map((ref, index) => {
       if (!ref) return null;
-      
+
       const observer = new IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
@@ -119,7 +119,7 @@ export default function Solutions() {
         },
         { threshold: 0.1 }
       );
-      
+
       observer.observe(ref);
       return observer;
     });
@@ -132,37 +132,35 @@ export default function Solutions() {
   return (
     <section id="solutions" className="py-20 bg-gradient-to-b from-white to-secondary/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="text-center space-y-6 mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">
-            Four Core AI Services
+            Practical AI Services for UK SMEs
           </div>
-          
+
           <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-gray-900">
-            Install in a morning.{' '}
-            <span className="text-accent">Start seeing ROI by next week.</span>
+            Start with one useful workflow.{' '}
+            <span className="text-accent">Train your team as you go.</span>
           </h2>
-          
+
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We specialize in four high-impact AI services that UK SMEs can install quickly and scale easily. 
-            No overwhelm, just proven solutions that work.
+            We focus on straightforward AI services that solve everyday problems: missed enquiries, slow follow-up,
+            admin overload and uncertainty about how to use AI safely.
           </p>
         </div>
 
-        {/* Solutions Grid */}
         <div className="grid md:grid-cols-2 gap-8">
           {solutions.map((solution, index) => {
             const Icon = solution.icon;
             const isVisible = visibleCards.includes(index);
             const isExpanded = expandedCard === index;
-            
+
             return (
               <div
                 key={index}
                 ref={el => cardRefs.current[index] = el}
                 className={`transform transition-all duration-700 ${
-                  isVisible 
-                    ? 'translate-y-0 opacity-100' 
+                  isVisible
+                    ? 'translate-y-0 opacity-100'
                     : 'translate-y-8 opacity-0'
                 }`}
                 style={{ transitionDelay: `${index * 150}ms` }}
@@ -178,9 +176,8 @@ export default function Solutions() {
                     <CardDescription className="text-gray-600 leading-relaxed">
                       {solution.description}
                     </CardDescription>
-                    
-                    {/* Quick Stats */}
-                    <div className="flex items-center space-x-4 pt-3">
+
+                    <div className="flex flex-wrap items-center gap-4 pt-3">
                       <div className="flex items-center space-x-2 text-sm">
                         <Clock className="h-4 w-4 text-accent" />
                         <span className="font-medium">{solution.installTime}</span>
@@ -191,9 +188,8 @@ export default function Solutions() {
                       </div>
                     </div>
                   </CardHeader>
-                  
+
                   <CardContent className="pt-0">
-                    {/* Core Features */}
                     <div className="mb-4">
                       <h4 className="font-medium text-gray-900 mb-3">What you get:</h4>
                       <ul className="space-y-2">
@@ -206,7 +202,6 @@ export default function Solutions() {
                       </ul>
                     </div>
 
-                    {/* Upgrade Options */}
                     <div className="mb-4">
                       <h4 className="font-medium text-gray-900 mb-3">Upgrade options:</h4>
                       <ul className="space-y-2">
@@ -219,10 +214,9 @@ export default function Solutions() {
                       </ul>
                     </div>
 
-                    {/* Price and CTA */}
                     <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
                       <div className="text-lg font-bold text-primary">{solution.price}</div>
-                      <button 
+                      <button
                         onClick={() => setExpandedCard(isExpanded ? null : index)}
                         className="flex items-center text-primary font-medium text-sm group-hover:text-accent transition-colors"
                       >
@@ -237,66 +231,64 @@ export default function Solutions() {
           })}
         </div>
 
-        {/* Why These Four Section */}
         <div className="mt-20 bg-gradient-to-r from-primary/5 to-accent/5 p-8 rounded-3xl">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-montserrat font-bold text-gray-900 mb-4">
-              Why These Four Services?
+              Why These Services?
             </h3>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              We've chosen these services because they deliver the highest ROI with the easiest implementation for UK SMEs.
+              These are the areas where UK SMEs usually see value fastest without buying a complex enterprise AI platform.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="text-center">
               <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                <Zap className="h-6 w-6 text-accent" />
+                <Target className="h-6 w-6 text-accent" />
               </div>
-              <h4 className="font-semibold text-gray-900 mb-2">High ROI</h4>
-              <p className="text-sm text-gray-600">Broad appeal across all SME pain points</p>
+              <h4 className="font-semibold text-gray-900 mb-2">Clear Pain Points</h4>
+              <p className="text-sm text-gray-600">Built around enquiries, admin, sales and skills</p>
             </div>
-            
+
             <div className="text-center">
               <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                <Clock className="h-6 w-6 text-primary" />
+                <Zap className="h-6 w-6 text-primary" />
               </div>
-              <h4 className="font-semibold text-gray-900 mb-2">Easy Deploy</h4>
-              <p className="text-sm text-gray-600">Off-the-shelf integrations, minimal setup</p>
+              <h4 className="font-semibold text-gray-900 mb-2">Lean Setup</h4>
+              <p className="text-sm text-gray-600">Uses tools your team can actually maintain</p>
             </div>
-            
+
             <div className="text-center">
               <div className="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                <TrendingUp className="h-6 w-6 text-green-600" />
+                <Users className="h-6 w-6 text-green-600" />
               </div>
-              <h4 className="font-semibold text-gray-900 mb-2">Upsell Potential</h4>
-              <p className="text-sm text-gray-600">Base installation + add-ons & training</p>
+              <h4 className="font-semibold text-gray-900 mb-2">Training Included</h4>
+              <p className="text-sm text-gray-600">People learn the workflow, not just the software</p>
             </div>
-            
+
             <div className="text-center">
               <div className="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                <Target className="h-6 w-6 text-purple-600" />
+                <ShieldCheck className="h-6 w-6 text-purple-600" />
               </div>
-              <h4 className="font-semibold text-gray-900 mb-2">Lean Focus</h4>
-              <p className="text-sm text-gray-600">Excel in four vs. under-deliver in ten</p>
+              <h4 className="font-semibold text-gray-900 mb-2">Safe Adoption</h4>
+              <p className="text-sm text-gray-600">Practical guidance on data, quality and oversight</p>
             </div>
           </div>
         </div>
 
-        {/* CTA Section */}
         <div className="mt-16 text-center">
           <div className="bg-gradient-to-r from-primary to-accent p-8 rounded-3xl text-white">
             <h3 className="text-2xl font-montserrat font-bold mb-4">
-              Ready to install your first AI tool?
+              Ready to find your first useful AI workflow?
             </h3>
             <p className="text-lg opacity-90 mb-6">
-              Let's show you how to get started with one of these services in under an hour.
+              Book a short review and we will recommend a simple starting point for your team.
             </p>
-            <button 
+            <button
               onClick={() => scrollToSection('contact')}
               className="bg-white text-primary px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105"
             >
-              Book Free Team Assessment
+              Book Free AI Review
             </button>
           </div>
         </div>

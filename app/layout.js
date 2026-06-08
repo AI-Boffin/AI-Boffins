@@ -14,12 +14,16 @@ const openSans = Open_Sans({
 });
 
 export const metadata = {
-  title: 'AI Boffins - Empowering UK Teams with AI',
-  description: 'Transform boring tasks into opportunities for growth. Help your team hit higher targets, earn more, and enjoy their work with AI automation.',
-  keywords: 'team empowerment, AI automation, UK workers, productivity boost, job satisfaction, workflow automation',
+  metadataBase: new URL('https://aiboffins.co.uk'),
+  title: 'AI Boffins - Practical AI Services for UK SMEs',
+  description: 'Practical AI workflows, consultancy and crash-course training for UK SMEs that want useful adoption without the jargon.',
+  keywords: 'AI consultancy UK, AI training for SMEs, AI workflow automation, ChatGPT training, Copilot training, UK business AI',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
-    title: 'AI Boffins - Empowering UK Teams with AI',
-    description: 'Transform boring tasks into opportunities for growth. Help your team hit higher targets, earn more, and enjoy their work.',
+    title: 'AI Boffins - Practical AI Services for UK SMEs',
+    description: 'AI workflows, consultancy and crash-course training for UK SMEs.',
     type: 'website',
   },
 };

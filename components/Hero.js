@@ -39,13 +39,13 @@ export default function Hero() {
             {/* Main Headline */}
             <div className="space-y-4">
               <h1 className="text-4xl md:text-6xl font-montserrat font-bold text-gray-900 leading-tight">
-                Four Fast-Track AI Tools{' '}
-                <span className="text-primary">British SMEs Can Install Today</span>
+                Practical AI Help{' '}
+                <span className="text-primary">for British SMEs</span>
               </h1>
               
               <p className="text-xl md:text-2xl text-gray-600 font-light leading-relaxed">
-                Install in a morning. Start seeing ROI by next week.{' '}
-                <span className="text-accent font-medium">No job losses—only enhancement.</span>
+                We set up useful AI workflows, teach your team how to use them, and keep adoption safe, simple and measurable.{' '}
+                <span className="text-accent font-medium">Start with one job worth improving.</span>
               </p>
             </div>
 
@@ -53,19 +53,19 @@ export default function Hero() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700">
               <div className="flex items-center space-x-3">
                 <Clock className="h-5 w-5 text-accent flex-shrink-0" />
-                <span>Free up 10+ hours per week</span>
+                <span>Cut repetitive admin</span>
               </div>
               <div className="flex items-center space-x-3">
                 <TrendingUp className="h-5 w-5 text-accent flex-shrink-0" />
-                <span>Boost productivity by 40%</span>
+                <span>Follow up leads faster</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Zap className="h-5 w-5 text-accent flex-shrink-0" />
-                <span>GDPR-compliant UK solutions</span>
+                <span>GDPR-aware UK guidance</span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="h-5 w-5 text-accent flex-shrink-0" />
-                <span>15-minute installation time</span>
+                <span>AI crash courses available</span>
               </div>
             </div>
 
@@ -76,7 +76,7 @@ export default function Hero() {
                 size="lg"
                 className="bg-accent hover:bg-accent/90 text-white text-lg px-8 py-4 h-auto group transition-all duration-300 hover:shadow-lg hover:shadow-accent/25"
               >
-                See Our Four AI Services
+                See Practical AI Services
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               
@@ -87,7 +87,7 @@ export default function Hero() {
                 className="border-primary text-primary hover:bg-primary hover:text-white text-lg px-8 py-4 h-auto group transition-all duration-300"
               >
                 <PlayCircle className="mr-2 h-5 w-5" />
-                Free Team Assessment
+                Free AI Review
               </Button>
             </div>
 
@@ -95,11 +95,11 @@ export default function Hero() {
             <div className="flex items-center space-x-6 text-sm text-gray-600 pt-4 border-t border-gray-200">
               <div className="flex items-center space-x-2">
                 <div className="w-3 h-3 bg-accent rounded-full"></div>
-                <span>No job losses - only job enhancement</span>
+                <span>Designed to support your team</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-3 h-3 bg-primary rounded-full"></div>
-                <span>1-hour training included</span>
+                <span>Training and handover included</span>
               </div>
             </div>
           </div>
@@ -110,7 +110,7 @@ export default function Hero() {
               {/* Mock Dashboard */}
               <div className="bg-white rounded-2xl p-6 space-y-6">
                 <div className="flex items-center justify-between">
-                  <h3 className="font-montserrat font-semibold text-gray-900">AI Services Dashboard</h3>
+                  <h3 className="font-montserrat font-semibold text-gray-900">AI Starter Plan</h3>
                   <div className="flex space-x-2">
                     <div className="w-3 h-3 bg-accent rounded-full"></div>
                     <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
@@ -118,51 +118,51 @@ export default function Hero() {
                   </div>
                 </div>
                 
-                {/* Four Service Cards */}
+                {/* Service Cards */}
                 <div className="grid grid-cols-2 gap-3">
                   <button 
                     onClick={() => scrollToSection('solutions')}
                     className="bg-accent/10 p-3 rounded-xl hover:bg-accent/20 transition-colors cursor-pointer"
                   >
-                    <div className="text-sm font-bold text-accent">AI Chatbot</div>
-                    <div className="text-xs text-gray-600">Live Chat + Support</div>
+                    <div className="text-sm font-bold text-accent">Enquiries</div>
+                    <div className="text-xs text-gray-600">Chat + Lead Capture</div>
                   </button>
                   <button 
                     onClick={() => scrollToSection('solutions')}
                     className="bg-primary/10 p-3 rounded-xl hover:bg-primary/20 transition-colors cursor-pointer"
                   >
-                    <div className="text-sm font-bold text-primary">Content AI</div>
-                    <div className="text-xs text-gray-600">Blogs + Marketing</div>
+                    <div className="text-sm font-bold text-primary">AI Training</div>
+                    <div className="text-xs text-gray-600">Crash Course</div>
                   </button>
                   <button 
                     onClick={() => scrollToSection('solutions')}
                     className="bg-green-500/10 p-3 rounded-xl hover:bg-green-500/20 transition-colors cursor-pointer"
                   >
-                    <div className="text-sm font-bold text-green-600">CRM AI</div>
-                    <div className="text-xs text-gray-600">Sales + Leads</div>
+                    <div className="text-sm font-bold text-green-600">Follow-Up</div>
+                    <div className="text-xs text-gray-600">Quotes + Leads</div>
                   </button>
                   <button 
                     onClick={() => scrollToSection('solutions')}
                     className="bg-purple-500/10 p-3 rounded-xl hover:bg-purple-500/20 transition-colors cursor-pointer"
                   >
-                    <div className="text-sm font-bold text-purple-600">Transcription</div>
-                    <div className="text-xs text-gray-600">Meetings + Admin</div>
+                    <div className="text-sm font-bold text-purple-600">Admin</div>
+                    <div className="text-xs text-gray-600">Docs + Meetings</div>
                   </button>
                 </div>
 
                 {/* Quick Stats */}
                 <div className="space-y-3">
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                    <span className="text-sm text-gray-700">Installation Time</span>
-                    <span className="text-sm font-bold text-accent">15 mins</span>
+                    <span className="text-sm text-gray-700">First Workflow</span>
+                    <span className="text-sm font-bold text-accent">2-5 days</span>
                   </div>
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                    <span className="text-sm text-gray-700">Weekly Time Saved</span>
-                    <span className="text-sm font-bold text-primary">10+ hours</span>
+                    <span className="text-sm text-gray-700">Team Training</span>
+                    <span className="text-sm font-bold text-primary">Included</span>
                   </div>
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                    <span className="text-sm text-gray-700">ROI Timeline</span>
-                    <span className="text-sm font-bold text-green-600">1 week</span>
+                    <span className="text-sm text-gray-700">Action Plan</span>
+                    <span className="text-sm font-bold text-green-600">30 days</span>
                   </div>
                 </div>
               </div>
@@ -176,7 +176,7 @@ export default function Hero() {
               </div>
               
               <div className="absolute -bottom-4 -left-4 bg-accent text-white p-3 rounded-xl shadow-lg">
-                <div className="text-sm font-medium">GDPR Compliant</div>
+                <div className="text-sm font-medium">GDPR-Aware</div>
               </div>
             </div>
           </div>

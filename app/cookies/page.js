@@ -4,6 +4,9 @@ import Footer from '@/components/Footer';
 export const metadata = {
   title: 'Cookie Policy - AI Boffins',
   description: 'Learn about how AI Boffins uses cookies and similar technologies to enhance your website experience.',
+  alternates: {
+    canonical: '/cookies',
+  },
 };
 
 export default function CookiePolicy() {
@@ -22,8 +25,8 @@ export default function CookiePolicy() {
           </p>
           <div className="mt-6 flex items-center justify-center space-x-4 text-sm text-white/80">
             <span>Last updated: {new Date().toLocaleDateString('en-GB')}</span>
-            <span>•</span>
-            <span>GDPR Compliant</span>
+            <span>|</span>
+            <span>GDPR-Aware</span>
           </div>
         </div>
       </section>

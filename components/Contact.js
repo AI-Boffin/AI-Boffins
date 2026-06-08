@@ -33,10 +33,10 @@ export default function Contact() {
     setIsSubmitting(true);
     
     try {
-      // EmailJS configuration - Direct values for now (secure to expose in client)
-      const serviceId = 'service_p5sojk8';
-      const templateId = 'template_mk77o7v';
-      const publicKey = '9kVunWNyXihFri4Qj';
+      // EmailJS configuration - Read from environment variables with fallbacks
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_p5sojk8';
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_mk77o7v';
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '9kVunWNyXihFri4Qj';
       
       console.log('EmailJS Config loaded');
       
@@ -47,14 +47,91 @@ export default function Contact() {
         return;
       }
       
+      // Map service key to reader-friendly label
+      const serviceLabels = {
+        'customer-enquiry': 'Customer Enquiry Assistant',
+        'lead-follow-up': 'Lead & Quote Follow-Up',
+        'admin-documents': 'Admin & Document Assistant',
+        'ai-training': 'AI Consultancy & Crash Course',
+        'starter-package': 'Managed AI Starter Package',
+        'consultation': 'Not sure - need a consultation'
+      };
+      const serviceLabel = serviceLabels[formData.service] || formData.service || 'General Inquiry';
+
+      // Build a premium HTML email template matching the AI Boffins brand
+      const htmlMessage = `
+<div style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc; padding: 40px 20px; color: #1e293b;">
+  <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.025); border: 1px solid #e2e8f0;">
+    
+    <!-- Header -->
+    <div style="background-color: #1E4B7C; padding: 32px; text-align: center; border-bottom: 4px solid #FFAA00;">
+      <h1 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 800; letter-spacing: -0.5px;">
+        AI <span style="color: #FFAA00;">Boffins</span>
+      </h1>
+      <p style="margin: 4px 0 0 0; color: #e2e8f0; font-size: 14px;">New Lead Submission</p>
+    </div>
+
+    <!-- Content Body -->
+    <div style="padding: 32px;">
+      <h2 style="margin-top: 0; margin-bottom: 24px; color: #0f172a; font-size: 18px; font-weight: 700; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
+        Contact Details
+      </h2>
+
+      <!-- Details Table -->
+      <table style="width: 100%; border-collapse: collapse; margin-bottom: 32px;">
+        <tr>
+          <td style="padding: 10px 0; font-size: 14px; color: #64748b; width: 35%; font-weight: 600; border-bottom: 1px solid #f1f5f9;">Name</td>
+          <td style="padding: 10px 0; font-size: 14px; color: #0f172a; border-bottom: 1px solid #f1f5f9; font-weight: 500;">${formData.name}</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px 0; font-size: 14px; color: #64748b; border-bottom: 1px solid #f1f5f9; font-weight: 600;">Email</td>
+          <td style="padding: 10px 0; font-size: 14px; color: #1E4B7C; border-bottom: 1px solid #f1f5f9; font-weight: 500;">
+            <a href="mailto:${formData.email}" style="color: #1E4B7C; text-decoration: none;">${formData.email}</a>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 10px 0; font-size: 14px; color: #64748b; border-bottom: 1px solid #f1f5f9; font-weight: 600;">Company</td>
+          <td style="padding: 10px 0; font-size: 14px; color: #0f172a; border-bottom: 1px solid #f1f5f9;">${formData.company}</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px 0; font-size: 14px; color: #64748b; border-bottom: 1px solid #f1f5f9; font-weight: 600;">Phone</td>
+          <td style="padding: 10px 0; font-size: 14px; color: #0f172a; border-bottom: 1px solid #f1f5f9;">
+            ${formData.phone ? `<a href="tel:${formData.phone}" style="color: #0f172a; text-decoration: none;">${formData.phone}</a>` : '<span style="color: #cbd5e1; font-style: italic;">Not provided</span>'}
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 10px 0; font-size: 14px; color: #64748b; border-bottom: 1px solid #f1f5f9; font-weight: 600;">Service Interest</td>
+          <td style="padding: 10px 0; font-size: 14px; color: #2DBE7F; font-weight: 600; border-bottom: 1px solid #f1f5f9;">
+            ${serviceLabel}
+          </td>
+        </tr>
+      </table>
+
+      <!-- Message Section -->
+      <h2 style="margin-top: 0; margin-bottom: 16px; color: #0f172a; font-size: 18px; font-weight: 700; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
+        Team Challenges & Inquiry
+      </h2>
+      <div style="background-color: #f8fafc; border-radius: 12px; padding: 20px; border: 1px solid #e2e8f0; line-height: 1.6; font-size: 14px; color: #334155; white-space: pre-wrap;">${formData.message}</div>
+    </div>
+
+    <!-- Footer -->
+    <div style="background-color: #f1f5f9; padding: 24px; text-align: center; font-size: 12px; color: #64748b; border-top: 1px solid #e2e8f0;">
+      <p style="margin: 0 0 8px 0; font-weight: 600;">AI Boffins Lead Generation</p>
+      <p style="margin: 0;">This email was automatically generated and sent from <a href="https://aiboffins.co.uk" style="color: #1E4B7C; text-decoration: none; font-weight: 500;">aiboffins.co.uk</a>.</p>
+    </div>
+  </div>
+</div>
+`;
+
       // Prepare template parameters
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
         company: formData.company,
-        phone: formData.phone,
-        service: formData.service,
+        phone: formData.phone || 'Not provided',
+        service: serviceLabel,
         message: formData.message,
+        html_message: htmlMessage,
         to_email: 'info@aiboffins.co.uk'
       };
       
@@ -96,18 +173,18 @@ export default function Contact() {
         {/* Header */}
         <div className="text-center space-y-6 mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium">
-            Ready to Install Your First AI Tool? Let's Chat.
+            Ready to Make AI Useful? Let's Chat.
           </div>
           
           <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-gray-900">
             Get your{' '}
-            <span className="text-primary">free team assessment</span>{' '}
+            <span className="text-primary">free AI review</span>{' '}
             today
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Book a consultation or send us a message. We'll show you exactly which of our four AI services 
-            will give your team the biggest productivity boost in the shortest time.
+            Book a consultation or send us a message. We'll help you identify the simplest workflow to improve first,
+            and whether your team needs setup, consultancy, training or all three.
           </p>
         </div>
 
@@ -179,7 +256,7 @@ export default function Contact() {
                   Tell us about your team
                 </CardTitle>
                 <p className="text-gray-600">
-                  Share your team's challenges and we'll show you how AI can help them achieve more.
+                  Share your team's challenges and we'll show you where AI can help without overcomplicating the business.
                 </p>
               </CardHeader>
               <CardContent>
@@ -194,7 +271,7 @@ export default function Contact() {
                     </p>
                     <div className="bg-accent/10 text-accent p-4 rounded-lg inline-block">
                       <strong>Next steps:</strong> We'll analyze your team's challenges and prepare 
-                      a custom AI empowerment plan to help them achieve more.
+                      a practical AI starting plan for your team.
                     </div>
                   </div>
                 ) : (
@@ -276,12 +353,12 @@ export default function Contact() {
                         className="w-full h-12 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                       >
                         <option value="">Select a service</option>
-                        <option value="ai-chatbot">AI Chatbot + Live Chat Support</option>
-                        <option value="content-generation">Automated Content Generation & Marketing</option>
-                        <option value="crm-sales-ai">AI-Enhanced CRM & Sales Workflow</option>
-                        <option value="transcription-admin">AI Transcription & Admin Automation</option>
-                        <option value="bundle">All Four Services (Bundle)</option>
-                        <option value="consultation">Just want a consultation</option>
+                        <option value="customer-enquiry">Customer Enquiry Assistant</option>
+                        <option value="lead-follow-up">Lead & Quote Follow-Up</option>
+                        <option value="admin-documents">Admin & Document Assistant</option>
+                        <option value="ai-training">AI Consultancy & Crash Course</option>
+                        <option value="starter-package">Managed AI Starter Package</option>
+                        <option value="consultation">Not sure - need a consultation</option>
                       </select>
                     </div>
 
@@ -294,7 +371,7 @@ export default function Contact() {
                         name="message"
                         value={formData.message}
                         onChange={handleInputChange}
-                        placeholder="What repetitive tasks frustrate your team? How many team members do you have? What's your biggest productivity pain point? What would you like to achieve in the next 30 days?"
+                        placeholder="What repetitive tasks frustrate your team? Where do leads, admin or customer enquiries slow down? How many people need to use AI? What would you like to improve in the next 30 days?"
                         required
                         className="min-h-[120px]"
                       />
@@ -305,7 +382,8 @@ export default function Contact() {
                         <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
                         <div className="text-sm text-gray-600">
                           <strong>What happens next?</strong> We'll review your team's challenges and send you a 
-                          custom AI implementation plan within 24 hours, including which service to start with, potential time savings, and installation timeline.
+                          practical AI starting plan within 24 hours, including which workflow to start with, likely tools,
+                          pricing and the training your team would need.
                         </div>
                       </div>
                     </div>
@@ -323,7 +401,7 @@ export default function Contact() {
                         </div>
                       ) : (
                         <>
-                          Send Message & Get Free Team Plan
+                          Send Message & Get Free AI Plan
                           <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                         </>
                       )}
@@ -331,7 +409,7 @@ export default function Contact() {
 
                     <p className="text-xs text-gray-500 text-center">
                       By submitting this form, you agree to our privacy policy. We'll never share your information 
-                      and you can unsubscribe at any time. All data is stored securely in the UK.
+                      and you can unsubscribe at any time.
                     </p>
                   </form>
                 )}

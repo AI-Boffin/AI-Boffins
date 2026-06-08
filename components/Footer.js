@@ -2,6 +2,7 @@
 
 import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook, ArrowUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -37,20 +38,19 @@ export default function Footer() {
             </div>
             
             <p className="text-white/90 leading-relaxed">
-              Four proven AI services that UK SMEs can install quickly and scale easily. 
-              No overwhelm, just high-impact solutions that deliver ROI within a week.
+              Practical AI workflows, consultancy and crash-course training for UK SMEs that want useful adoption without the jargon.
             </p>
 
             {/* Trust Badges */}
             <div className="flex flex-wrap gap-2">
               <span className="bg-accent/20 text-accent px-3 py-1 rounded-full text-xs font-medium">
-                🇬🇧 UK-Based
+                UK-Based
               </span>
               <span className="bg-white/20 text-white px-3 py-1 rounded-full text-xs font-medium">
                 Team-Focused
               </span>
               <span className="bg-white/20 text-white px-3 py-1 rounded-full text-xs font-medium">
-                GDPR Compliant
+                GDPR-Aware
               </span>
             </div>
           </div>
@@ -74,7 +74,7 @@ export default function Footer() {
                   onClick={() => scrollToSection('solutions')}
                   className="text-white/80 hover:text-accent transition-colors text-sm"
                 >
-                  Team Solutions
+                  AI Services
                 </button>
               </li>
               <li>
@@ -115,20 +115,20 @@ export default function Footer() {
           {/* Services */}
           <div>
             <h3 className="font-montserrat font-semibold text-lg mb-6 text-white">
-              Our Four AI Services
+              AI Services
             </h3>
             <ul className="space-y-3">
-              <li className="text-white/80 text-sm">AI Chatbot + Live Chat</li>
-              <li className="text-white/80 text-sm">Content Generation & Marketing</li>
-              <li className="text-white/80 text-sm">CRM & Sales AI</li>
-              <li className="text-white/80 text-sm">Transcription & Admin</li>
-              <li className="text-white/80 text-sm">Full Service Bundle</li>
+              <li className="text-white/80 text-sm">Customer Enquiry Assistant</li>
+              <li className="text-white/80 text-sm">Lead & Quote Follow-Up</li>
+              <li className="text-white/80 text-sm">Admin & Document Assistant</li>
+              <li className="text-white/80 text-sm">AI Consultancy & Crash Course</li>
+              <li className="text-white/80 text-sm">Managed AI Starter Package</li>
               <li>
                 <button 
                   onClick={() => scrollToSection('contact')}
                   className="text-accent hover:text-accent/80 transition-colors text-sm font-medium"
                 >
-                  Free Team Assessment →
+                  Free AI Review
                 </button>
               </li>
             </ul>
@@ -219,10 +219,10 @@ export default function Footer() {
             <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-sm text-white/70">
               <p>&copy; {new Date().getFullYear()} AI Boffins. All rights reserved.</p>
               <div className="flex space-x-4">
-                <a href="/privacy" className="hover:text-accent transition-colors">Privacy Policy</a>
-                <a href="/terms" className="hover:text-accent transition-colors">Terms of Service</a>
-                <a href="/cookies" className="hover:text-accent transition-colors">Cookie Policy</a>
-                <a href="/gdpr" className="hover:text-accent transition-colors">GDPR</a>
+                <Link href="/privacy" className="hover:text-accent transition-colors">Privacy Policy</Link>
+                <Link href="/terms" className="hover:text-accent transition-colors">Terms of Service</Link>
+                <Link href="/cookies" className="hover:text-accent transition-colors">Cookie Policy</Link>
+                <Link href="/gdpr" className="hover:text-accent transition-colors">GDPR</Link>
               </div>
             </div>
             

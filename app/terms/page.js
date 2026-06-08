@@ -4,6 +4,9 @@ import Footer from '@/components/Footer';
 export const metadata = {
   title: 'Terms of Service - AI Boffins',
   description: 'Read our terms of service and understand the conditions for using AI Boffins services and website.',
+  alternates: {
+    canonical: '/terms',
+  },
 };
 
 export default function TermsOfService() {

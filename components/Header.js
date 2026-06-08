@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -76,7 +77,7 @@ export default function Header() {
             </div>
           </div>
           <div className="hidden md:block">
-            <span className="text-accent font-medium">🇬🇧 Empowering UK Workers</span>
+            <span className="text-accent font-medium">Practical AI for UK SMEs</span>
           </div>
         </div>
       </div>
@@ -107,7 +108,7 @@ export default function Header() {
                 
                 {/* Letters AI Boffins styled individually */}
                 <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle"
-                      fontFamily="'Poppins', sans-serif" fontSize="60" fontWeight="900" letterSpacing="-8">
+                      fontFamily="var(--font-montserrat), sans-serif" fontSize="60" fontWeight="900" letterSpacing="-8">
                   <tspan fill="rgb(30, 75, 124)">A</tspan>
                   <tspan fill="#FFAA00">I</tspan>
                   <tspan fill="rgb(45, 190, 127)">B</tspan>
@@ -190,18 +191,18 @@ export default function Header() {
                   Legal
                 </button>
                 <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                  <a href="/privacy" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary">
+                  <Link href="/privacy" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary">
                     Privacy Policy
-                  </a>
-                  <a href="/terms" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary">
+                  </Link>
+                  <Link href="/terms" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary">
                     Terms of Service
-                  </a>
-                  <a href="/cookies" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary">
+                  </Link>
+                  <Link href="/cookies" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary">
                     Cookie Policy
-                  </a>
-                  <a href="/gdpr" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary">
+                  </Link>
+                  <Link href="/gdpr" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary">
                     GDPR
-                  </a>
+                  </Link>
                 </div>
               </div>
             </nav>
@@ -212,7 +213,7 @@ export default function Header() {
                 onClick={() => scrollToSection('contact')}
                 className="bg-accent hover:bg-accent/90 text-white font-medium"
               >
-                Free Team Assessment
+                Free AI Review
               </Button>
             </div>
 
@@ -268,24 +269,24 @@ export default function Header() {
               </button>
               <div className="border-t border-gray-200 pt-4">
                 <div className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-2">Legal</div>
-                <a href="/privacy" className="block text-gray-700 hover:text-primary transition-colors font-medium py-2">
+                <Link href="/privacy" className="block text-gray-700 hover:text-primary transition-colors font-medium py-2">
                   Privacy Policy
-                </a>
-                <a href="/terms" className="block text-gray-700 hover:text-primary transition-colors font-medium py-2">
+                </Link>
+                <Link href="/terms" className="block text-gray-700 hover:text-primary transition-colors font-medium py-2">
                   Terms of Service
-                </a>
-                <a href="/cookies" className="block text-gray-700 hover:text-primary transition-colors font-medium py-2">
+                </Link>
+                <Link href="/cookies" className="block text-gray-700 hover:text-primary transition-colors font-medium py-2">
                   Cookie Policy
-                </a>
-                <a href="/gdpr" className="block text-gray-700 hover:text-primary transition-colors font-medium py-2">
+                </Link>
+                <Link href="/gdpr" className="block text-gray-700 hover:text-primary transition-colors font-medium py-2">
                   GDPR
-                </a>
+                </Link>
               </div>
               <Button 
                 onClick={() => scrollToSection('contact')}
                 className="w-full bg-accent hover:bg-accent/90 text-white font-medium mt-4"
               >
-                Free Team Assessment
+                Free AI Review
               </Button>
             </div>
           </div>

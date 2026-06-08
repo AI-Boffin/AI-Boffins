@@ -19,25 +19,37 @@ Your contact form is now configured to use EmailJS to send emails directly to `i
 ## Step 3: Create Email Template
 1. Go to **Email Templates**
 2. Click **Create New Template**
-3. Use this template content:
+3. Configure the template layout. You have two options for the template content:
+
+### Option A: Premium HTML Layout (Recommended)
+This delivers a beautiful, professional email matching the AI Boffins branding (dark blue header, organized contact details table, and styled message block).
+
+1. Click on the **HTML** button or the **Source Code** (`<>`) icon in the EmailJS text editor.
+2. Paste the following single variable as the entire content:
+   ```html
+   {{{html_message}}}
+   ```
+   *(Note: The triple braces `{{{ ... }}}` are required so EmailJS renders the raw HTML correctly rather than escaping the code).*
+
+### Option B: Plain Text Layout
+If you prefer standard plain text email delivery:
+1. In the text editor, paste:
+   ```
+   From: {{from_name}} ({{from_email}})
+   Company: {{company}}
+   Phone: {{phone}}
+   Service Interest: {{service}}
+
+   Message:
+   {{message}}
+
+   ---
+   This message was sent from the AI Boffins contact form.
+   ```
 
 ### Template Settings:
 - **Template Name**: `contact_form_template`
 - **Subject**: `New Contact Form Submission from {{from_name}}`
-
-### Template Content:
-```
-From: {{from_name}} ({{from_email}})
-Company: {{company}}
-Phone: {{phone}}
-Service Interest: {{service}}
-
-Message:
-{{message}}
-
----
-This message was sent from the AI Boffins contact form.
-```
 
 4. Save the template and note down your **Template ID** (e.g., `template_xxxxxxx`)
 

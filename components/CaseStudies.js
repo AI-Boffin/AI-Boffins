@@ -7,100 +7,100 @@ import { Quote, ArrowRight, TrendingUp, Clock, DollarSign, Users, Smile, Target 
 
 const caseStudies = [
   {
-    company: 'E-commerce Retailer',
+    company: 'Home Services Company',
     location: 'Manchester',
-    industry: 'Online Retail',
-    challenge: 'Customer support team overwhelmed with 200+ daily queries, 80% were repetitive FAQs',
-    solution: 'AI Chatbot + Live Chat Support could handle 70% of queries automatically',
+    industry: 'Trades & Maintenance',
+    challenge: 'Enquiries arriving by phone, form and email were not always followed up quickly',
+    solution: 'Customer Enquiry Assistant with quote capture, FAQ answers and handoff to the office team',
     results: {
-      timeSaved: '15 hours/week',
-      responseTime: '90% faster',
-      customerSatisfaction: '+45%'
+      timeSaved: 'Less manual triage',
+      responseTime: 'Faster first reply',
+      customerSatisfaction: 'Fewer missed jobs'
     },
-    quote: "Imagine your support team no longer drowning in repetitive questions. An AI chatbot could handle the basics while your team focuses on complex issues. Your support lead could finally have time to provide excellent service.",
+    quote: "Imagine every new enquiry being captured cleanly, with the right questions asked before your team calls back. AI can handle the first pass while people deal with the customer relationship.",
     icon: Users,
     color: 'from-blue-500 to-primary',
-    service: 'AI Chatbot + Live Chat'
+    service: 'Customer Enquiry Assistant'
   },
   {
-    company: 'Marketing Agency',
+    company: 'Professional Services Firm',
     location: 'Birmingham',
-    industry: 'Digital Marketing',
-    challenge: 'Content team spending 25 hours/week on blog posts and social media content',
-    solution: 'Automated Content Generation & Marketing could produce 80% of routine content',
+    industry: 'Business Services',
+    challenge: 'Consultants were losing time turning meetings, notes and emails into client-ready actions',
+    solution: 'Admin & Document Assistant for meeting summaries, action logs and document first drafts',
     results: {
-      timeSaved: '20 hours/week',
-      contentOutput: '+300%',
-      teamProductivity: '+60%'
+      timeSaved: 'Less copy-paste admin',
+      contentOutput: 'Cleaner action lists',
+      teamProductivity: 'More client time'
     },
-    quote: "Picture your content team breaking free from repetitive writing. AI could generate the first draft while your team adds creativity and strategy. You could be producing 3x more content with better quality.",
+    quote: "Picture every meeting ending with a clear action list, follow-up email and draft summary. The team still checks the work, but they are not starting from a blank page.",
     icon: Target,
     color: 'from-accent to-green-600',
-    service: 'Content Generation & Marketing'
+    service: 'Admin & Document Assistant'
   },
   {
     company: 'B2B Sales Company',
     location: 'Leeds',
     industry: 'Business Services',
-    challenge: 'Sales team losing leads due to slow follow-up and poor lead scoring',
-    solution: 'AI-Enhanced CRM & Sales Workflow with automated lead scoring and follow-ups',
+    challenge: 'Quotes were being sent but not chased consistently',
+    solution: 'Lead & Quote Follow-Up with quote chaser sequences and weekly missed-lead summaries',
     results: {
-      leadConversion: '+40%',
-      followUpTime: '90% faster',
-      salesRevenue: '+35%'
+      leadConversion: 'More warm follow-up',
+      followUpTime: 'Same-day prompts',
+      salesRevenue: 'Better pipeline visibility'
     },
-    quote: "Envision your sales team never missing opportunities again. AI could prioritize leads and send personalized follow-ups automatically. Your whole team could be hitting targets they never thought possible.",
+    quote: "Envision your team no longer relying on memory to chase quotes. AI-assisted reminders and templates can keep warm prospects moving without making the process feel robotic.",
     icon: Smile,
     color: 'from-purple-500 to-primary',
-    service: 'CRM & Sales AI'
+    service: 'Lead & Quote Follow-Up'
   },
   {
-    company: 'Legal Practice',
+    company: 'Growing Local SME',
     location: 'Edinburgh',
-    industry: 'Legal Services',
-    challenge: 'Paralegals spending 30+ hours/week on document transcription and admin tasks',
-    solution: 'AI Transcription & Admin Automation could handle 85% of routine document processing',
+    industry: 'Operations',
+    challenge: 'Staff were experimenting with AI, but managers were unsure what was safe or useful',
+    solution: 'AI Consultancy & Crash Course covering ChatGPT, Copilot, prompting, data safety and real business tasks',
     results: {
-      timeSaved: '25 hours/week',
-      accuracy: '99.5%',
-      clientTurnaround: '+50% faster'
+      timeSaved: 'Less uncertainty',
+      accuracy: 'Better output checks',
+      clientTurnaround: 'Clearer next steps'
     },
-    quote: "Consider your paralegals freed from mind-numbing transcription work. AI could handle the routine stuff while they focus on legal research and client service. Your whole practice could be more efficient with faster client turnaround.",
+    quote: "Consider the difference between random AI use and a team that knows what to ask, what to check and what data to keep out of public tools. The crash course turns curiosity into a working habit.",
     icon: Clock,
     color: 'from-orange-500 to-accent',
-    service: 'Transcription & Admin AI'
+    service: 'AI Consultancy & Crash Course'
   },
   {
     company: 'Electrical Contractor',
     location: 'Bristol',
     industry: 'Electrical Services',
-    challenge: 'Field teams spending 2+ hours daily on admin tasks, scheduling, and customer follow-ups',
-    solution: 'AI Chatbot + CRM could automate scheduling, quotes, and customer communications',
+    challenge: 'Field teams were sending job notes back to the office in inconsistent formats',
+    solution: 'Admin & Document Assistant with standard job summary prompts and office handoff templates',
     results: {
-      timeSaved: '10 hours/week',
-      jobBooking: '+60%',
-      customerResponse: 'Instant'
+      timeSaved: 'Cleaner handovers',
+      jobBooking: 'Fewer admin gaps',
+      customerResponse: 'Faster updates'
     },
-    quote: "Think about your field teams focusing purely on electrical work instead of admin. An AI chatbot could handle customer inquiries and booking while your CRM automatically follows up on quotes. You could book more jobs with instant customer responses.",
+    quote: "Think about engineers sending consistent job notes back to the office without needing to write polished updates from scratch. AI can structure the rough notes while people stay in control.",
     icon: Users,
     color: 'from-blue-500 to-primary',
-    service: 'AI Chatbot + CRM'
+    service: 'Admin & Document Assistant'
   },
   {
     company: 'Artisan Bakery',
     location: 'York',
     industry: 'Food Production',
-    challenge: 'Daily stock management taking 3+ hours, frequent ingredient shortages affecting production',
-    solution: 'AI-powered inventory tracking with automated restocking alerts and supplier ordering',
+    challenge: 'Marketing, review replies and seasonal updates were always pushed behind daily operations',
+    solution: 'AI crash course plus a simple marketing prompt pack for offers, reviews and local updates',
     results: {
-      timeSaved: '12 hours/week',
-      wasteReduction: '-40%',
-      stockAccuracy: '99%'
+      timeSaved: 'Faster first drafts',
+      wasteReduction: 'More consistent updates',
+      stockAccuracy: 'Clearer brand voice'
     },
-    quote: "Imagine never running out of flour or yeast again. AI could track your ingredient levels, predict usage patterns, and automatically alert suppliers when restocking is needed. You could reduce waste by 40% while ensuring perfect stock accuracy.",
+    quote: "Imagine having a practical prompt pack for offers, review replies and seasonal posts, so marketing no longer starts from a blank page at the end of a long day.",
     icon: Clock,
     color: 'from-orange-500 to-accent',
-    service: 'Transcription & Admin AI'
+    service: 'AI Consultancy & Crash Course'
   }
 ];
 
@@ -158,17 +158,16 @@ export default function CaseStudies() {
         {/* Header */}
         <div className="text-center space-y-6 mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium">
-            See How Our Four AI Services Transform Teams
+            See How Practical AI Can Support Teams
           </div>
           
           <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-gray-900">
             Here are ways our{' '}
-            <span className="text-primary">AI services can support</span> your business
+            <span className="text-primary">AI services can support</span> everyday work
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover how our four core AI services can help eliminate repetitive tasks, 
-            boost productivity, and transform how your team works.
+            These examples show realistic places to start: enquiries, follow-up, admin, documents and staff confidence.
           </p>
         </div>
 
@@ -309,15 +308,15 @@ export default function CaseStudies() {
               Ready to explore how AI could transform your team?
             </h3>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Discover how our four AI services could help your team save 15+ hours per week. 
-              Let's show you which service could give you the biggest productivity boost.
+              Discover where AI could remove friction from your team without overcomplicating the business.
+              We will show you which workflow is worth testing first.
             </p>
             <Button 
               onClick={() => scrollToSection('contact')}
               size="lg"
               className="bg-accent hover:bg-accent/90 text-white px-8 py-4 h-auto font-semibold group"
             >
-              Book Your Free Team Assessment
+              Book Your Free AI Review
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>

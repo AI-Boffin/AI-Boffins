@@ -7,14 +7,14 @@ const steps = [
   {
     icon: Search,
     number: '01',
-    title: 'Free Team Assessment',
-    subtitle: 'Discover which AI service fits your needs',
-    description: 'We analyze your team\'s biggest pain points and recommend the AI service that will deliver the fastest ROI.',
+    title: 'Free AI Review',
+    subtitle: 'Find one sensible place to start',
+    description: 'We look at your enquiries, admin, sales follow-up and team confidence, then recommend the simplest AI starting point.',
     features: [
-      'Team productivity analysis',
-      'Service recommendation',
-      'ROI projections',
-      'Implementation timeline'
+      'Workflow and tool review',
+      'Use-case recommendation',
+      'Risk and data notes',
+      'Plain-English next steps'
     ],
     duration: '30 mins',
     color: 'from-blue-500 to-primary'
@@ -22,46 +22,46 @@ const steps = [
   {
     icon: Build,
     number: '02',
-    title: 'Quick Installation',
-    subtitle: 'Get your AI service running in under an hour',
-    description: 'We install and configure your chosen AI service, ensuring it integrates seamlessly with your existing workflows.',
+    title: 'Lean Setup',
+    subtitle: 'Build the first workflow properly',
+    description: 'We configure the chosen workflow around your existing tools, documents and team responsibilities.',
     features: [
-      'Same-day installation',
-      'System integration',
-      'Basic configuration',
+      'Workflow setup',
+      'Tool configuration',
+      'Prompt and template library',
       'Team access setup'
     ],
-    duration: '15 mins - 1 hour',
+    duration: '2-5 days',
     color: 'from-accent to-green-600'
   },
   {
     icon: Users,
     number: '03',
-    title: 'Team Training',
-    subtitle: 'Get your team up and running quickly',
-    description: 'Comprehensive 1-hour training session to ensure your team feels confident using their new AI tools.',
+    title: 'Crash Course',
+    subtitle: 'Teach people how to use AI safely',
+    description: 'A practical session covering ChatGPT, Copilot, prompting, checking outputs and what not to put into AI tools.',
     features: [
-      '1-hour training session',
-      'Best practices guide',
+      'Hands-on AI training',
+      'Safe-use guidance',
       'Q&A support',
       'Performance tips'
     ],
-    duration: '1 hour',
+    duration: '2 hours',
     color: 'from-purple-500 to-primary'
   },
   {
     icon: Rocket,
     number: '04',
-    title: 'See Results in a Week',
-    subtitle: 'Start experiencing productivity gains immediately',
-    description: 'Your team begins seeing time savings and productivity improvements within the first week of use.',
+    title: 'Review & Improve',
+    subtitle: 'Measure what is working',
+    description: 'We check usage, fix friction points and help you decide whether to expand, pause or refine the workflow.',
     features: [
-      'Immediate time savings',
-      'Performance monitoring',
+      'Usage check-in',
+      'Workflow improvements',
       'Ongoing support',
-      'Upgrade opportunities'
+      'Next-step recommendations'
     ],
-    duration: '1 week',
+    duration: '30 days',
     color: 'from-orange-500 to-accent'
   }
 ];
@@ -119,13 +119,12 @@ export default function HowItWorks() {
           </div>
           
           <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-gray-900">
-            From assessment to{' '}
-            <span className="text-primary">ROI in under a week</span>
+            From first review to{' '}
+            <span className="text-primary">useful AI adoption</span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our streamlined process gets your chosen AI service up and running quickly, 
-            so your team can start seeing productivity gains immediately.
+            We keep the process practical: pick one workflow, set it up properly, train the team and review what changed.
           </p>
         </div>
 
@@ -280,7 +279,7 @@ export default function HowItWorks() {
               Get an instant snapshot of performance, accessibility and SEO.
             </p>
             <a
-              href="https://www.ai-siteanalyser.co.uk/"
+              href="https://itboffins.com/free-tools/website-analyser"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center bg-gradient-to-r from-primary to-accent text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105"
@@ -290,13 +289,13 @@ export default function HowItWorks() {
             </a>
           </div>
           <div className="inline-flex items-center px-6 py-3 bg-primary/5 text-primary rounded-full text-lg font-medium mb-4">
-            Ready to empower your team? Let's start with a free assessment.
+            Ready to make AI useful? Start with a free review.
           </div>
           <button 
             onClick={() => scrollToSection('contact')}
             className="bg-gradient-to-r from-primary to-accent text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105"
           >
-            Book Your Free Team Assessment
+            Book Your Free AI Review
           </button>
         </div>
       </div>

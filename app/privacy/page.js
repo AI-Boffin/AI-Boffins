@@ -1,9 +1,13 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Link from 'next/link';
 
 export const metadata = {
   title: 'Privacy Policy - AI Boffins',
   description: 'Learn how AI Boffins protects your privacy and handles your personal data in compliance with GDPR and UK data protection laws.',
+  alternates: {
+    canonical: '/privacy',
+  },
 };
 
 export default function PrivacyPolicy() {
@@ -22,8 +26,8 @@ export default function PrivacyPolicy() {
           </p>
           <div className="mt-6 flex items-center justify-center space-x-4 text-sm text-white/80">
             <span>Last updated: {new Date().toLocaleDateString('en-GB')}</span>
-            <span>•</span>
-            <span>GDPR Compliant</span>
+            <span>|</span>
+            <span>GDPR-Aware</span>
           </div>
         </div>
       </section>
@@ -193,7 +197,7 @@ export default function PrivacyPolicy() {
               <p className="text-gray-700 leading-relaxed">
                 To exercise these rights, please contact us at{' '}
                 <a href="mailto:privacy@aiboffins.co.uk" className="text-accent hover:text-accent/80">
-                  info@aiboffins.co.uk
+                  privacy@aiboffins.co.uk
                 </a>
               </p>
             </div>
@@ -206,9 +210,9 @@ export default function PrivacyPolicy() {
               <p className="text-gray-700 leading-relaxed mb-4">
                 We use cookies and similar technologies to enhance your experience on our website. 
                 For detailed information about our use of cookies, please see our{' '}
-                <a href="/cookies" className="text-accent hover:text-accent/80">
+                <Link href="/cookies" className="text-accent hover:text-accent/80">
                   Cookie Policy
-                </a>.
+                </Link>.
               </p>
             </div>
 
@@ -268,7 +272,7 @@ export default function PrivacyPolicy() {
                 </p>
                 <p className="text-gray-700 mb-2">
                   Email: <a href="mailto:privacy@aiboffins.co.uk" className="text-accent hover:text-accent/80">
-                    info@aiboffins.co.uk
+                    privacy@aiboffins.co.uk
                   </a>
                 </p>
                 <p className="text-gray-700 mb-2">
