@@ -24,7 +24,7 @@ export default function TermsOfService() {
             The terms and conditions for using our AI services
           </p>
           <div className="mt-6 flex items-center justify-center space-x-4 text-sm text-white/80">
-            <span>Last updated: {new Date().toLocaleDateString('en-GB')}</span>
+            <span>Last updated: 10 June 2026</span>
             <span>•</span>
             <span>UK Law Governed</span>
           </div>

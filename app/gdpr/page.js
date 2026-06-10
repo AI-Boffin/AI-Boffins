@@ -25,7 +25,7 @@ export default function GDPRCompliance() {
             How we protect your data rights under UK and EU data protection laws
           </p>
           <div className="mt-6 flex items-center justify-center space-x-4 text-sm text-white/80">
-            <span>Last updated: {new Date().toLocaleDateString('en-GB')}</span>
+            <span>Last updated: 10 June 2026</span>
             <span>|</span>
             <span>GDPR-Aware</span>
           </div>

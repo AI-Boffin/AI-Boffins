@@ -118,36 +118,34 @@ export default function Header() {
                 {/* Spiral Overlay */}
                 <circle id="spiral" cx="200" cy="75" r="150" fill="none" stroke="rgb(30, 75, 124)" strokeWidth="10" opacity="0" />
                 
-                <style>
-                  {`
-                    #spiral {
-                      transform-origin: 200px 75px;
-                      transform: scale(0);
-                      will-change: transform, opacity, stroke;
+                <style dangerouslySetInnerHTML={{ __html: `
+                  #spiral {
+                    transform-origin: 200px 75px;
+                    transform: scale(0);
+                    will-change: transform, opacity, stroke;
+                  }
+                  svg:hover #spiral {
+                    animation: spiral-out 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+                  }
+                  @keyframes spiral-out {
+                    0% {
+                      transform: scale(0) rotate(0deg);
+                      opacity: 0.8;
+                      stroke: rgb(30, 75, 124);
                     }
-                    svg:hover #spiral {
-                      animation: spiral-out 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+                    35% {
+                      stroke: rgb(45, 190, 127);
                     }
-                    @keyframes spiral-out {
-                      0% {
-                        transform: scale(0) rotate(0deg);
-                        opacity: 0.8;
-                        stroke: rgb(30, 75, 124);
-                      }
-                      35% {
-                        stroke: rgb(45, 190, 127);
-                      }
-                      70% {
-                        stroke: #FFAA00;
-                      }
-                      100% {
-                        transform: scale(1) rotate(120deg);
-                        opacity: 0;
-                        stroke: #FFAA00;
-                      }
+                    70% {
+                      stroke: #FFAA00;
                     }
-                  `}
-                </style>
+                    100% {
+                      transform: scale(1) rotate(120deg);
+                      opacity: 0;
+                      stroke: #FFAA00;
+                    }
+                  }
+                ` }} />
               </svg>
               </button>
               <div className="ml-2 text-xs text-muted-foreground hidden sm:block">
