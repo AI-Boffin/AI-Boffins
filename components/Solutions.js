@@ -25,7 +25,15 @@ const solutions = [
       'More pages and knowledge sources'
     ],
     color: 'from-blue-500 to-primary',
-    price: 'From £59/mo'
+    price: 'From £59/mo',
+    details: {
+      howItWorks: 'An intelligent AI assistant is trained directly on your business files, pricing sheets, service lists, and FAQs. It sits on your website or triages incoming contact forms to capture qualified leads instantly.',
+      bullets: [
+        { title: '24/7 Lead Capture', text: 'Captures and qualifies prospects round-the-clock, even outside business hours.' },
+        { title: 'Human Hand-off', text: 'Instantly alerts your team via Slack or email when a hot lead asks to speak to a human.' }
+      ],
+      security: 'Visitor data is handled securely under UK GDPR. We utilize isolated enterprise endpoints to ensure none of your customer chats are used to train public LLM models.'
+    }
   },
   {
     icon: BarChart3,
@@ -47,7 +55,15 @@ const solutions = [
       'Team coaching'
     ],
     color: 'from-accent to-green-600',
-    price: 'From £79/mo'
+    price: 'From £79/mo',
+    details: {
+      howItWorks: 'Simple email and CRM automations that track sent quotes and automatically send friendly, personalized chasers to warm leads that have gone quiet, ensuring you win more business.',
+      bullets: [
+        { title: 'Smart Follow-up', text: 'Personalized email sequences sent at optimized intervals (e.g. 2 days and 7 days).' },
+        { title: 'CRM Automation', text: 'Moves deals automatically through pipeline stages, keeping your dashboard clean.' }
+      ],
+      security: 'All integrations use secure API protocols with access credentials safely stored as encrypted environment variables.'
+    }
   },
   {
     icon: FileText,
@@ -69,7 +85,15 @@ const solutions = [
       'Department-specific templates'
     ],
     color: 'from-purple-500 to-primary',
-    price: 'From £69/mo'
+    price: 'From £69/mo',
+    details: {
+      howItWorks: 'Secure internal workspaces loaded with your company templates, guides, and procedures, enabling you to automate meeting notes, summarize reports, and extract data from invoices.',
+      bullets: [
+        { title: 'Meeting Actions', text: 'Summarizes audio files or transcripts into structured tasks and email drafts in seconds.' },
+        { title: 'Paperwork Extract', text: 'Scans documents or supplier invoices to extract details and populate tables.' }
+      ],
+      security: 'We configure private data boundaries (commercial data protection) so your sensitive client information never leaks.'
+    }
   },
   {
     icon: GraduationCap,
@@ -91,7 +115,15 @@ const solutions = [
       'Monthly AI office hours'
     ],
     color: 'from-orange-500 to-accent',
-    price: 'From £360'
+    price: 'From £360',
+    details: {
+      howItWorks: 'A targeted half-day session where we audit your current workflows to identify the 3 highest-value areas to automate, followed by live, practical prompting and safety training for your team.',
+      bullets: [
+        { title: 'Workflow Audit', text: 'Identify where your team wastes time and select the highest-ROI tools to start using.' },
+        { title: 'Custom Prompt Library', text: 'Receive a library of proven, customized prompts tailored to your specific business tasks.' }
+      ],
+      security: 'We train your team on what is safe to upload, how to check AI hallucinations, and how to verify compliance with UK data protection.'
+    }
   }
 ];
 
@@ -212,6 +244,30 @@ export default function Solutions() {
                           </li>
                         ))}
                       </ul>
+                    </div>
+
+                    {/* Collapsible section for expanded state */}
+                    <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isExpanded ? 'max-h-[500px] opacity-100 mb-6 mt-4 border-t border-gray-100 pt-4' : 'max-h-0 opacity-0'}`}>
+                      <div className="space-y-4 text-left">
+                        <h4 className="font-semibold text-gray-900 text-sm">How it works & Benefits:</h4>
+                        <p className="text-sm text-gray-600 leading-relaxed">
+                          {solution.details.howItWorks}
+                        </p>
+                        
+                        <div className="grid grid-cols-2 gap-3">
+                          {solution.details.bullets.map((bullet, bulletIndex) => (
+                            <div key={bulletIndex} className="bg-gray-50 p-2.5 rounded-lg border border-gray-100">
+                              <h5 className="font-semibold text-xs text-primary mb-1">{bullet.title}</h5>
+                              <p className="text-xs text-gray-600 leading-tight">{bullet.text}</p>
+                            </div>
+                          ))}
+                        </div>
+
+                        <div className="p-3 bg-primary/5 rounded-xl border border-primary/10">
+                          <span className="text-xs font-semibold text-primary block mb-1">🔒 Security & Data Privacy</span>
+                          <p className="text-xs text-gray-600 leading-normal">{solution.details.security}</p>
+                        </div>
+                      </div>
                     </div>
 
                     <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
