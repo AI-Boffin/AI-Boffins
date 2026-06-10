@@ -116,31 +116,32 @@ export default function Header() {
                 </text>
                 
                 {/* Spiral Overlay */}
-                <circle id="spiral" cx="200" cy="75" r="0" fill="none" stroke="#00F0FF" strokeWidth="10" opacity="0" />
+                <circle id="spiral" cx="200" cy="75" r="150" fill="none" stroke="rgb(30, 75, 124)" strokeWidth="10" opacity="0" />
                 
                 <style>
                   {`
+                    #spiral {
+                      transform-origin: 200px 75px;
+                      transform: scale(0);
+                      will-change: transform, opacity, stroke;
+                    }
                     svg:hover #spiral {
-                      animation: spiral-out 2s ease forwards;
+                      animation: spiral-out 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
                     }
                     @keyframes spiral-out {
                       0% {
-                        r: 0;
-                        opacity: 0.7;
+                        transform: scale(0) rotate(0deg);
+                        opacity: 0.8;
                         stroke: rgb(30, 75, 124);
                       }
-                      33% {
-                        r: 50;
-                        opacity: 0.5;
+                      35% {
                         stroke: rgb(45, 190, 127);
                       }
-                      66% {
-                        r: 100;
-                        opacity: 0.3;
+                      70% {
                         stroke: #FFAA00;
                       }
                       100% {
-                        r: 150;
+                        transform: scale(1) rotate(120deg);
                         opacity: 0;
                         stroke: #FFAA00;
                       }
