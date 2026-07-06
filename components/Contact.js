@@ -6,7 +6,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Phone, Mail, MapPin, Send, CheckCircle, Users } from 'lucide-react';
-import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -33,112 +32,19 @@ export default function Contact() {
     setIsSubmitting(true);
     
     try {
-      // EmailJS configuration - Read from environment variables with fallbacks
-      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_p5sojk8';
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_mk77o7v';
-      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '9kVunWNyXihFri4Qj';
-      
-      console.log('EmailJS Config loaded');
-      
-      if (!serviceId || !templateId || !publicKey) {
-        console.error('EmailJS environment variables are not set');
-        alert('Email service is not configured. Please contact us directly at info@aiboffins.co.uk');
-        setIsSubmitting(false);
-        return;
-      }
-      
-      // Map service key to reader-friendly label
-      const serviceLabels = {
-        'customer-enquiry': 'Customer Enquiry Assistant',
-        'lead-follow-up': 'Lead & Quote Follow-Up',
-        'admin-documents': 'Admin & Document Assistant',
-        'ai-training': 'AI Consultancy & Crash Course',
-        'starter-package': 'Managed AI Starter Package',
-        'consultation': 'Not sure - need a consultation'
-      };
-      const serviceLabel = serviceLabels[formData.service] || formData.service || 'General Inquiry';
-
-      // Build a premium HTML email template matching the AI Boffins brand
-      const htmlMessage = `
-<div style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc; padding: 40px 20px; color: #1e293b;">
-  <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.025); border: 1px solid #e2e8f0;">
-    
-    <!-- Header -->
-    <div style="background-color: #1E4B7C; padding: 32px; text-align: center; border-bottom: 4px solid #FFAA00;">
-      <h1 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 800; letter-spacing: -0.5px;">
-        AI <span style="color: #FFAA00;">Boffins</span>
-      </h1>
-      <p style="margin: 4px 0 0 0; color: #e2e8f0; font-size: 14px;">New Lead Submission</p>
-    </div>
-
-    <!-- Content Body -->
-    <div style="padding: 32px;">
-      <h2 style="margin-top: 0; margin-bottom: 24px; color: #0f172a; font-size: 18px; font-weight: 700; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
-        Contact Details
-      </h2>
-
-      <!-- Details Table -->
-      <table style="width: 100%; border-collapse: collapse; margin-bottom: 32px;">
-        <tr>
-          <td style="padding: 10px 0; font-size: 14px; color: #64748b; width: 35%; font-weight: 600; border-bottom: 1px solid #f1f5f9;">Name</td>
-          <td style="padding: 10px 0; font-size: 14px; color: #0f172a; border-bottom: 1px solid #f1f5f9; font-weight: 500;">${formData.name}</td>
-        </tr>
-        <tr>
-          <td style="padding: 10px 0; font-size: 14px; color: #64748b; border-bottom: 1px solid #f1f5f9; font-weight: 600;">Email</td>
-          <td style="padding: 10px 0; font-size: 14px; color: #1E4B7C; border-bottom: 1px solid #f1f5f9; font-weight: 500;">
-            <a href="mailto:${formData.email}" style="color: #1E4B7C; text-decoration: none;">${formData.email}</a>
-          </td>
-        </tr>
-        <tr>
-          <td style="padding: 10px 0; font-size: 14px; color: #64748b; border-bottom: 1px solid #f1f5f9; font-weight: 600;">Company</td>
-          <td style="padding: 10px 0; font-size: 14px; color: #0f172a; border-bottom: 1px solid #f1f5f9;">${formData.company}</td>
-        </tr>
-        <tr>
-          <td style="padding: 10px 0; font-size: 14px; color: #64748b; border-bottom: 1px solid #f1f5f9; font-weight: 600;">Phone</td>
-          <td style="padding: 10px 0; font-size: 14px; color: #0f172a; border-bottom: 1px solid #f1f5f9;">
-            ${formData.phone ? `<a href="tel:${formData.phone}" style="color: #0f172a; text-decoration: none;">${formData.phone}</a>` : '<span style="color: #cbd5e1; font-style: italic;">Not provided</span>'}
-          </td>
-        </tr>
-        <tr>
-          <td style="padding: 10px 0; font-size: 14px; color: #64748b; border-bottom: 1px solid #f1f5f9; font-weight: 600;">Service Interest</td>
-          <td style="padding: 10px 0; font-size: 14px; color: #2DBE7F; font-weight: 600; border-bottom: 1px solid #f1f5f9;">
-            ${serviceLabel}
-          </td>
-        </tr>
-      </table>
-
-      <!-- Message Section -->
-      <h2 style="margin-top: 0; margin-bottom: 16px; color: #0f172a; font-size: 18px; font-weight: 700; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
-        Team Challenges & Inquiry
-      </h2>
-      <div style="background-color: #f8fafc; border-radius: 12px; padding: 20px; border: 1px solid #e2e8f0; line-height: 1.6; font-size: 14px; color: #334155; white-space: pre-wrap;">${formData.message}</div>
-    </div>
-
-    <!-- Footer -->
-    <div style="background-color: #f1f5f9; padding: 24px; text-align: center; font-size: 12px; color: #64748b; border-top: 1px solid #e2e8f0;">
-      <p style="margin: 0 0 8px 0; font-weight: 600;">AI Boffins Lead Generation</p>
-      <p style="margin: 0;">This email was automatically generated and sent from <a href="https://aiboffins.co.uk" style="color: #1E4B7C; text-decoration: none; font-weight: 500;">aiboffins.co.uk</a>.</p>
-    </div>
-  </div>
-</div>
-`;
-
-      // Prepare template parameters
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        company: formData.company,
-        phone: formData.phone || 'Not provided',
-        service: serviceLabel,
-        message: formData.message,
-        html_message: htmlMessage,
-        to_email: 'info@aiboffins.co.uk'
-      };
-      
-      // Send email using EmailJS (newer API version)
-      await emailjs.send(serviceId, templateId, templateParams, {
-        publicKey: publicKey
+      const response = await fetch('/api/inquiries', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message');
+      }
       
       setIsSubmitting(false);
       setIsSubmitted(true);
@@ -158,11 +64,10 @@ export default function Contact() {
       
     } catch (error) {
       console.error('Failed to send email:', error);
-      console.error('Error details:', error.text || error.message || error);
       setIsSubmitting(false);
       
       // Show more detailed error message to help debug
-      const errorMsg = error.text || error.message || 'Unknown error';
+      const errorMsg = error.message || 'Unknown error';
       alert(`Failed to send message: ${errorMsg}. Please contact us directly at info@aiboffins.co.uk`);
     }
   };
