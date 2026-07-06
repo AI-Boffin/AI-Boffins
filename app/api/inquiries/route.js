@@ -99,7 +99,7 @@ export async function POST(request) {
 `;
 
     // Call Plunk REST API
-    const response = await fetch('https://api.useplunk.com/v1/send', {
+    const response = await fetch('https://next-api.useplunk.com/v1/send', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -107,6 +107,7 @@ export async function POST(request) {
       },
       body: JSON.stringify({
         to: 'info@aiboffins.co.uk',
+        from: 'info@aiboffins.co.uk',
         subject: `New Contact Form Submission from ${name}`,
         body: htmlMessage,
         name: 'AI Boffins Contact Form',
