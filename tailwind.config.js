@@ -32,8 +32,8 @@ module.exports = {
         ring: '#1E4B7C',
       },
       fontFamily: {
-        'montserrat': ['Montserrat', 'sans-serif'],
-        'open-sans': ['Open Sans', 'sans-serif'],
+        'montserrat': ['var(--font-montserrat)', 'sans-serif'],
+        'sans': ['Arial', 'Helvetica', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

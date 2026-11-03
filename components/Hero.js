@@ -1,22 +1,7 @@
-'use client';
-
-import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle, PlayCircle, Users, TrendingUp, Smile, Clock, Zap } from 'lucide-react';
 
 export default function Hero() {
-  const [isVisible, setIsVisible] = useState(false);
 
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <section id="home" className="relative bg-gradient-to-br from-primary/5 via-white to-accent/5 py-20 md:py-32 overflow-hidden">
@@ -29,7 +14,7 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Content */}
-          <div className={`space-y-8 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`}>
+          <div className="space-y-8">
             {/* Badge */}
             <div className="inline-flex items-center px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium border border-accent/20">
               <Users className="h-4 w-4 mr-2" />
@@ -39,10 +24,10 @@ export default function Hero() {
             {/* Main Headline */}
             <div className="space-y-4">
               <h1 className="text-4xl md:text-6xl font-montserrat font-bold text-gray-900 leading-tight">
-                Practical AI Help{' '}
-                <span className="text-primary">for British SMEs</span>
+                AI Consultancy & Training{' '}
+                <span className="text-primary">for UK SMEs</span>
               </h1>
-              
+
               <p className="text-xl md:text-2xl text-gray-600 font-light leading-relaxed">
                 We set up useful AI workflows, teach your team how to use them, and keep adoption safe, simple and measurable.{' '}
                 <span className="text-accent font-medium">Start with one job worth improving.</span>
@@ -71,28 +56,25 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                onClick={() => scrollToSection('solutions')}
-                size="lg"
-                className="bg-accent hover:bg-accent/90 text-white text-lg px-8 py-4 h-auto group transition-all duration-300 hover:shadow-lg hover:shadow-accent/25"
+              <a
+                href="/#solutions"
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-accent hover:bg-accent/90 text-white text-lg px-8 py-4 h-auto group transition-all duration-300 hover:shadow-lg hover:shadow-accent/25"
               >
                 See Practical AI Services
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              
-              <Button 
-                onClick={() => scrollToSection('contact')}
-                variant="outline"
-                size="lg"
-                className="border-primary text-primary hover:bg-primary hover:text-white text-lg px-8 py-4 h-auto group transition-all duration-300"
+              </a>
+
+              <a
+                href="/#contact"
+                className="inline-flex items-center justify-center gap-2 rounded-md border border-primary text-primary hover:bg-primary hover:text-white text-lg px-8 py-4 h-auto group transition-all duration-300"
               >
                 <PlayCircle className="mr-2 h-5 w-5" />
                 Free AI Review
-              </Button>
+              </a>
             </div>
 
             {/* Trust Indicators */}
-            <div className="flex items-center space-x-6 text-sm text-gray-600 pt-4 border-t border-gray-200">
+            <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 pt-4 border-t border-gray-200">
               <div className="flex items-center space-x-2">
                 <div className="w-3 h-3 bg-accent rounded-full"></div>
                 <span>Designed to support your team</span>
@@ -105,7 +87,7 @@ export default function Hero() {
           </div>
 
           {/* Right Column - Visual */}
-          <div className={`relative ${isVisible ? 'animate-slide-in-right' : 'opacity-0'}`}>
+          <div className="relative">
             <div className="relative bg-gradient-to-br from-primary to-accent p-8 rounded-3xl shadow-2xl">
               {/* Mock Dashboard */}
               <div className="bg-white rounded-2xl p-6 space-y-6">
@@ -117,37 +99,37 @@ export default function Hero() {
                     <div className="w-3 h-3 bg-red-400 rounded-full"></div>
                   </div>
                 </div>
-                
+
                 {/* Service Cards */}
                 <div className="grid grid-cols-2 gap-3">
-                  <button 
-                    onClick={() => scrollToSection('solutions')}
+                  <a
+                    href="/#solutions"
                     className="bg-accent/10 p-3 rounded-xl hover:bg-accent/20 transition-colors cursor-pointer"
                   >
                     <div className="text-sm font-bold text-accent">Enquiries</div>
                     <div className="text-xs text-gray-600">Chat + Lead Capture</div>
-                  </button>
-                  <button 
-                    onClick={() => scrollToSection('solutions')}
+                  </a>
+                  <a
+                    href="/#solutions"
                     className="bg-primary/10 p-3 rounded-xl hover:bg-primary/20 transition-colors cursor-pointer"
                   >
                     <div className="text-sm font-bold text-primary">AI Training</div>
                     <div className="text-xs text-gray-600">Crash Course</div>
-                  </button>
-                  <button 
-                    onClick={() => scrollToSection('solutions')}
+                  </a>
+                  <a
+                    href="/#solutions"
                     className="bg-green-500/10 p-3 rounded-xl hover:bg-green-500/20 transition-colors cursor-pointer"
                   >
                     <div className="text-sm font-bold text-green-600">Follow-Up</div>
                     <div className="text-xs text-gray-600">Quotes + Leads</div>
-                  </button>
-                  <button 
-                    onClick={() => scrollToSection('solutions')}
+                  </a>
+                  <a
+                    href="/#solutions"
                     className="bg-purple-500/10 p-3 rounded-xl hover:bg-purple-500/20 transition-colors cursor-pointer"
                   >
                     <div className="text-sm font-bold text-purple-600">Admin</div>
                     <div className="text-xs text-gray-600">Docs + Meetings</div>
-                  </button>
+                  </a>
                 </div>
 
                 {/* Quick Stats */}
@@ -174,7 +156,7 @@ export default function Hero() {
                   <span className="text-sm font-medium">UK-Based</span>
                 </div>
               </div>
-              
+
               <div className="absolute -bottom-4 -left-4 bg-accent text-white p-3 rounded-xl shadow-lg">
                 <div className="text-sm font-medium">GDPR-Aware</div>
               </div>

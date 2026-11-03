@@ -16,12 +16,6 @@ export default function Footer() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <footer className="bg-primary text-white">
@@ -31,19 +25,19 @@ export default function Footer() {
           {/* Company Info */}
           <div className="space-y-6">
             <div>
-              <button 
-                onClick={() => scrollToSection('home')}
+              <a
+                href="/"
                 className="cursor-pointer"
               >
                 <div className="font-montserrat font-bold text-2xl mb-2">
                   AI <span className="text-accent">Boffins</span>
                 </div>
-              </button>
+              </a>
               <p className="text-white/80 text-sm">
                 Sister company to IT Boffins
               </p>
             </div>
-            
+
             <p className="text-white/90 leading-relaxed">
               Practical AI workflows, consultancy and crash-course training for UK SMEs that want useful adoption without the jargon.
             </p>
@@ -69,52 +63,52 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3">
               <li>
-                <button 
-                  onClick={() => scrollToSection('home')}
+                <a
+                  href="/"
                   className="text-white/80 hover:text-accent transition-colors text-sm"
                 >
                   Home
-                </button>
+                </a>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('solutions')}
+                <a
+                  href="/#solutions"
                   className="text-white/80 hover:text-accent transition-colors text-sm"
                 >
                   AI Services
-                </button>
+                </a>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('how-it-works')}
+                <a
+                  href="/#how-it-works"
                   className="text-white/80 hover:text-accent transition-colors text-sm"
                 >
                   How It Works
-                </button>
+                </a>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('pricing')}
+                <a
+                  href="/#pricing"
                   className="text-white/80 hover:text-accent transition-colors text-sm"
                 >
                   Pricing
-                </button>
+                </a>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('case-studies')}
+                <a
+                  href="/#case-studies"
                   className="text-white/80 hover:text-accent transition-colors text-sm"
                 >
                   Case Studies
-                </button>
+                </a>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('contact')}
+                <a
+                  href="/#contact"
                   className="text-white/80 hover:text-accent transition-colors text-sm"
                 >
                   Contact
-                </button>
+                </a>
               </li>
             </ul>
           </div>
@@ -131,12 +125,12 @@ export default function Footer() {
               <li className="text-white/80 text-sm">AI Consultancy & Crash Course</li>
               <li className="text-white/80 text-sm">Managed AI Starter Package</li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('contact')}
+                <a
+                  href="/#contact"
                   className="text-accent hover:text-accent/80 transition-colors text-sm font-medium"
                 >
                   Free AI Review
-                </button>
+                </a>
               </li>
             </ul>
           </div>
@@ -150,7 +144,7 @@ export default function Footer() {
               <div className="flex items-start space-x-3">
                 <Phone className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
                 <div>
-                  <a 
+                  <a
                     href="tel:01908410917"
                     className="text-white/90 hover:text-accent transition-colors text-sm"
                   >
@@ -159,11 +153,11 @@ export default function Footer() {
                   <p className="text-white/60 text-xs">Mon-Fri, 9am-6pm GMT</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start space-x-3">
                 <Mail className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
                 <div>
-                  <a 
+                  <a
                     href="mailto:info@aiboffins.co.uk"
                     className="text-white/90 hover:text-accent transition-colors text-sm"
                   >
@@ -172,7 +166,7 @@ export default function Footer() {
                   <p className="text-white/60 text-xs">We respond within 2 hours</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
                 <div>
@@ -186,8 +180,8 @@ export default function Footer() {
             <div className="mt-6">
               <p className="text-white/80 text-sm mb-3">Follow us:</p>
               <div className="flex space-x-3">
-                <a 
-                  href="https://linkedin.com/company/aiboffins" 
+                <a
+                  href="https://linkedin.com/company/aiboffins"
                   className="bg-white/10 hover:bg-accent p-2 rounded-full transition-colors"
                   aria-label="LinkedIn"
                   target="_blank"
@@ -195,17 +189,8 @@ export default function Footer() {
                 >
                   <Linkedin className="h-4 w-4" />
                 </a>
-                <a 
-                  href="https://twitter.com/aiboffins" 
-                  className="bg-white/10 hover:bg-accent p-2 rounded-full transition-colors"
-                  aria-label="Twitter"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Twitter className="h-4 w-4" />
-                </a>
-                <a 
-                  href="https://facebook.com/aiboffins" 
+                <a
+                  href="https://www.facebook.com/aiboffins"
                   className="bg-white/10 hover:bg-accent p-2 rounded-full transition-colors"
                   aria-label="Facebook"
                   target="_blank"
@@ -232,7 +217,7 @@ export default function Footer() {
                 <Link href="/gdpr" className="hover:text-accent transition-colors">GDPR</Link>
               </div>
             </div>
-            
+
             <Button
               onClick={scrollToTop}
               variant="outline"

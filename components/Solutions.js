@@ -132,12 +132,6 @@ export default function Solutions() {
   const [expandedCard, setExpandedCard] = useState(null);
   const cardRefs = useRef([]);
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   useEffect(() => {
     const observers = cardRefs.current.map((ref, index) => {
@@ -193,7 +187,7 @@ export default function Solutions() {
                 className={`transform transition-all duration-700 ${
                   isVisible
                     ? 'translate-y-0 opacity-100'
-                    : 'translate-y-8 opacity-0'
+                    : 'translate-y-0 opacity-100'
                 }`}
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
@@ -253,7 +247,7 @@ export default function Solutions() {
                         <p className="text-sm text-gray-600 leading-relaxed">
                           {solution.details.howItWorks}
                         </p>
-                        
+
                         <div className="grid grid-cols-2 gap-3">
                           {solution.details.bullets.map((bullet, bulletIndex) => (
                             <div key={bulletIndex} className="bg-gray-50 p-2.5 rounded-lg border border-gray-100">
@@ -340,12 +334,12 @@ export default function Solutions() {
             <p className="text-lg opacity-90 mb-6">
               Book a short review and we will recommend a simple starting point for your team.
             </p>
-            <button
-              onClick={() => scrollToSection('contact')}
+            <a
+              href="/#contact"
               className="bg-white text-primary px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105"
             >
               Book Free AI Review
-            </button>
+            </a>
           </div>
         </div>
       </div>

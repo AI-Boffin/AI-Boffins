@@ -71,17 +71,11 @@ export default function HowItWorks() {
   const [visibleSteps, setVisibleSteps] = useState([]);
   const stepRefs = useRef([]);
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   useEffect(() => {
     const observers = stepRefs.current.map((ref, index) => {
       if (!ref) return null;
-      
+
       const observer = new IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
@@ -90,7 +84,7 @@ export default function HowItWorks() {
         },
         { threshold: 0.3 }
       );
-      
+
       observer.observe(ref);
       return observer;
     });
@@ -117,12 +111,12 @@ export default function HowItWorks() {
           <div className="inline-flex items-center px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium">
             How We Get You Started
           </div>
-          
+
           <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-gray-900">
             From first review to{' '}
             <span className="text-primary">useful AI adoption</span>
           </h2>
-          
+
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             We keep the process practical: pick one workflow, set it up properly, train the team and review what changed.
           </p>
@@ -133,21 +127,21 @@ export default function HowItWorks() {
           <div className="relative">
             {/* Timeline Line */}
             <div className="absolute top-24 left-0 w-full h-1 bg-gradient-to-r from-primary via-accent to-primary rounded-full"></div>
-            
+
             {/* Steps */}
             <div className="grid grid-cols-4 gap-8">
               {steps.map((step, index) => {
                 const Icon = step.icon;
                 const isVisible = visibleSteps.includes(index);
-                
+
                 return (
                   <div
                     key={index}
                     ref={el => stepRefs.current[index] = el}
                     className={`relative transform transition-all duration-700 ${
-                      isVisible 
-                        ? 'translate-y-0 opacity-100' 
-                        : 'translate-y-8 opacity-0'
+                      isVisible
+                        ? 'translate-y-0 opacity-100'
+                        : 'translate-y-0 opacity-100'
                     }`}
                     style={{ transitionDelay: `${index * 200}ms` }}
                     onMouseEnter={() => setActiveStep(index)}
@@ -158,7 +152,7 @@ export default function HowItWorks() {
                     }`}>
                       <Icon className="h-8 w-8 text-white" />
                     </div>
-                    
+
                     {/* Content Card */}
                     <div className={`bg-white p-6 rounded-2xl shadow-lg border border-gray-100 transform transition-all duration-300 ${
                       activeStep === index ? 'shadow-xl border-primary/20 -translate-y-2' : ''
@@ -174,11 +168,11 @@ export default function HowItWorks() {
                           {step.subtitle}
                         </p>
                       </div>
-                      
+
                       <p className="text-gray-600 text-sm leading-relaxed mb-4">
                         {step.description}
                       </p>
-                      
+
                       <ul className="space-y-2 mb-4">
                         {step.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-center text-xs text-gray-700">
@@ -187,7 +181,7 @@ export default function HowItWorks() {
                           </li>
                         ))}
                       </ul>
-                      
+
                       <div className="text-center pt-4 border-t border-gray-100">
                         <span className="text-xs font-medium text-accent">
                           Timeline: {step.duration}
@@ -207,15 +201,15 @@ export default function HowItWorks() {
             {steps.map((step, index) => {
               const Icon = step.icon;
               const isVisible = visibleSteps.includes(index);
-              
+
               return (
                 <div
                   key={index}
                   ref={el => stepRefs.current[index] = el}
                   className={`relative transform transition-all duration-700 ${
-                    isVisible 
-                      ? 'translate-x-0 opacity-100' 
-                      : 'translate-x-8 opacity-0'
+                    isVisible
+                      ? 'translate-x-0 opacity-100'
+                      : 'translate-y-0 opacity-100'
                   }`}
                   style={{ transitionDelay: `${index * 150}ms` }}
                 >
@@ -224,7 +218,7 @@ export default function HowItWorks() {
                     <div className={`flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center shadow-lg`}>
                       <Icon className="h-6 w-6 text-white" />
                     </div>
-                    
+
                     {/* Content */}
                     <div className="flex-1 bg-white p-6 rounded-xl shadow-lg border border-gray-100">
                       <div className="flex items-center justify-between mb-3">
@@ -235,15 +229,15 @@ export default function HowItWorks() {
                           {step.duration}
                         </span>
                       </div>
-                      
+
                       <p className="text-primary font-medium text-sm mb-3">
                         {step.subtitle}
                       </p>
-                      
+
                       <p className="text-gray-600 text-sm leading-relaxed mb-4">
                         {step.description}
                       </p>
-                      
+
                       <ul className="space-y-2">
                         {step.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-center text-sm text-gray-700">
@@ -254,7 +248,7 @@ export default function HowItWorks() {
                       </ul>
                     </div>
                   </div>
-                  
+
                   {/* Connecting Line */}
                   {index < steps.length - 1 && (
                     <div className="ml-6 w-0.5 h-8 bg-gradient-to-b from-primary to-accent opacity-30 mt-4"></div>
@@ -291,12 +285,12 @@ export default function HowItWorks() {
           <div className="inline-flex items-center px-6 py-3 bg-primary/5 text-primary rounded-full text-lg font-medium mb-4">
             Ready to make AI useful? Start with a free review.
           </div>
-          <button 
-            onClick={() => scrollToSection('contact')}
+          <a
+            href="/#contact"
             className="bg-gradient-to-r from-primary to-accent text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105"
           >
             Book Your Free AI Review
-          </button>
+          </a>
         </div>
       </div>
     </section>

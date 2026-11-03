@@ -119,12 +119,6 @@ export default function Pricing() {
   const [selectedService, setSelectedService] = useState(0);
   const cardRefs = useRef([]);
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   useEffect(() => {
     const observers = cardRefs.current.map((ref, index) => {
@@ -202,7 +196,7 @@ export default function Pricing() {
                   className={`transform transition-all duration-700 ${
                     visibleCards.includes(0)
                       ? 'translate-y-0 opacity-100'
-                      : 'translate-y-8 opacity-0'
+                      : 'translate-y-0 opacity-100'
                   }`}
                 >
                   <Card className="h-full border-2 border-gray-200 hover:shadow-lg transition-shadow duration-300">
@@ -245,13 +239,13 @@ export default function Pricing() {
                         ))}
                       </ul>
 
-                      <Button
-                        onClick={() => scrollToSection('contact')}
-                        className="w-full bg-gray-800 hover:bg-gray-900 text-white font-semibold py-3 h-auto group transition-all duration-300"
+                      <a
+                        href="/#contact"
+                        className="inline-flex items-center justify-center gap-2 rounded-md w-full bg-gray-800 hover:bg-gray-900 text-white font-semibold py-3 h-auto group transition-all duration-300"
                       >
                         Get Started
                         <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                      </Button>
+                      </a>
                     </CardContent>
                   </Card>
                 </div>
@@ -261,7 +255,7 @@ export default function Pricing() {
                   className={`transform transition-all duration-700 ${
                     visibleCards.includes(1)
                       ? 'translate-y-0 opacity-100'
-                      : 'translate-y-8 opacity-0'
+                      : 'translate-y-0 opacity-100'
                   }`}
                   style={{ transitionDelay: '150ms' }}
                 >
@@ -312,13 +306,13 @@ export default function Pricing() {
                         ))}
                       </ul>
 
-                      <Button
-                        onClick={() => scrollToSection('contact')}
-                        className="w-full bg-accent hover:bg-accent/90 text-white font-semibold py-3 h-auto group transition-all duration-300"
+                      <a
+                        href="/#contact"
+                        className="inline-flex items-center justify-center gap-2 rounded-md w-full bg-accent hover:bg-accent/90 text-white font-semibold py-3 h-auto group transition-all duration-300"
                       >
                         Ask About This
                         <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                      </Button>
+                      </a>
                     </CardContent>
                   </Card>
                 </div>
@@ -337,13 +331,12 @@ export default function Pricing() {
             </p>
             <div className="text-4xl font-bold mb-4">£249/month</div>
             <p className="text-sm opacity-90 mb-6">Setup: £995 | Minimum term: 3 months</p>
-            <Button
-              onClick={() => scrollToSection('contact')}
-              size="lg"
-              className="bg-white text-primary px-8 py-4 h-auto font-semibold hover:shadow-lg transition-all duration-300"
+            <a
+              href="/#contact"
+              className="inline-flex items-center justify-center gap-2 rounded-md bg-white text-primary px-8 py-4 h-auto font-semibold hover:shadow-lg transition-all duration-300"
             >
               Ask About Starter Package
-            </Button>
+            </a>
           </div>
         </div>
 
@@ -356,13 +349,12 @@ export default function Pricing() {
               Book a free AI review and we will identify the most realistic first workflow, the tools involved and
               the training your team would need.
             </p>
-            <Button
-              onClick={() => scrollToSection('contact')}
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-white px-8 py-4 h-auto font-semibold"
+            <a
+              href="/#contact"
+              className="inline-flex items-center justify-center gap-2 rounded-md bg-primary hover:bg-primary/90 text-white px-8 py-4 h-auto font-semibold"
             >
               Book Free AI Review
-            </Button>
+            </a>
           </div>
 
           <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-600">
